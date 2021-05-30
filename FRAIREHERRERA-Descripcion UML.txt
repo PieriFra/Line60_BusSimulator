@@ -1,0 +1,18 @@
+TP Fina: Trabajo Número 5 “Línea de colectivos”
+
+Diagrama UML
+Consideramos las clases:
+- Colectivo, que será clase padre de ColectivoNuevo y ColectivoViejo. A su vez ColectivoNuevo es clase padre de ColectivoAcordeon. La relación es de herencia.
+Luego veremos que atributos y métodos propios podemos agregarle.
+ Colectivo (padre) tendrá como atributo una lista static de paradas.
+Como métodos tiene:
+* Calcular Tarifa: dependerá de la parada inicial y final que indique el pasajero.
+* Monto Total Colectivo: calcula el monto total recaudado por un colectivo en un día.
+* Bajar Pasajero: cuando un pasajero llega a la parada final, se llama este método. Quita este pasajero de la lista de pasajeros, actualiza la cantidad de pasajeros dentro del colectivo y en la lista.
+* Subir Pasajero: mientras que la cantidad de pasajeros que hay en el colectivo es menor a la cantidad máxima permitida (acá utilizamos el método VerificarPeso), se sube un pasajero. Tiene prioridad para subir las personas en sillas de ruedas.
+* VerificarPesoCant: verifica que la cantidad de pasajeros que hay en el colectivo es menor a la cantidad máxima permitida o que no supere el peso máximo.
+* GPS: cada 5 minutos retorna el código de la parada en la que se encuentra el colectivo.
+* Colectivo Roto: -
+- Paradas: posee como atributos un código de parada, un nombre y una dirección. Solo cuenta con el método ToString e Imprimir.
+- Pasajeros: sus atributos son un numero de boleto, la parada inicial donde comienza el recorrido y una parada final, y el monto de la tarifa del viaje (que se calculará con el método Calcular Tarifa en la clase Colectivo).  Además, posee sus métodos ToString e Imprimir.
+- Viajes: tiene como métodos listar el monto total por colectivo, con su cantidad de pasajeros correspondientes, y listar el total recaudado de todos los colectivos, junto con el total global de pasajeros.
