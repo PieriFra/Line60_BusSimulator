@@ -5,17 +5,15 @@ class Parada;
 template<class Parada>class cListaT;
 class Ramal
 {
-
 	string nombre;
-	string codigo_parada;
-	static cListaT<Parada>*ListaParadas;
-
+	int codigo_parada;
 
 public:
-	Ramal(string nombre, string codigo_parada, cListaT<Parada>* ListaParadas);
+	static cListaT<Parada>* ListaParadas;
+	Ramal(string nombre, int codigo_parada, cListaT<Parada>* ListaParadas);
 	~Ramal();
 
-
+	int GetCod() { return codigo_parada; }
 
 	string To_String();
 	void Imprimir();

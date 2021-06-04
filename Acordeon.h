@@ -5,17 +5,19 @@
 #include <iostream>
 #include <ctime>
 using namespace std;
+class Ramal;
 
 class Acordeon : public Nuevo
 {
-	const int cant_ruedas=8;
+	const int cant_ruedas;
 public:
 	Acordeon(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion,
-		float peso_max, float tarifa,static const int cant_ruedas);
+		float peso_max, float tarifa, Ramal *ramal);
 	~Acordeon();
 
-	bool PrenderApagarAire();
+	void PrenderApagarAire( bool Estado);
 	
+	bool GetAire() { return aire; }
 	string to_string();
 	void Imprimir();
 };

@@ -10,20 +10,20 @@ class Pasajero
 {
 	friend Parada;
 private:
-	Parada parada_inicial; //pasar por parametro??
-	Parada parada_final;
+	int parada_inicial; //por codigo
+	int parada_final; //por codigo
 	unsigned int nro_boleto; //boleto unico del pasajero
 	float peso;//peso del pasajero
 	bool discapacidad;//true si usa silla de ruedas
 
 public:
-	Pasajero(Parada parada_inicial, Parada parada_final, unsigned int nro_boleto,
-		float peso, bool discapacidad);
+	Pasajero(int parada_final, unsigned int nro_boleto, bool discapacidad);
 	~Pasajero();
 
-	Parada GetParadaInicial() { return parada_inicial; }
-	Parada GetParadaFinal() { return parada_final; }
-
+	int GetParadaInicial() { return parada_inicial; }
+	int GetParadaFinal() { return parada_final; }
+	void SetParadIncio(int CodParada) { CodParada = parada_inicial; }
+	void SetPeso(float peso) { this->peso = peso; }
 	string to_string();
 	void Imprimir();
 
