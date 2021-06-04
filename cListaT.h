@@ -40,7 +40,7 @@ public:
 
 	T* operator[] (unsigned int pos);
 	void operator+(T* item);
-	void operator<<(T* item);
+	friend ostream& operator<<(ostream& os, const cListaT<T>& Lista);
 };
 
 template<class T>
@@ -259,8 +259,11 @@ inline void cListaT<T>::operator+(T* item)
 
 }
 
-template<class T>
-inline void cListaT<T>::operator<<(T* item)
+template <class T>
+ostream& operator<<(ostream& os, cListaT<T>& Lista)
 {
-	item->Imprmir();
+	os << Lista.To_String() << endl;
+	return os;
 }
+
+

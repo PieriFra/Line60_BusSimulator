@@ -22,7 +22,7 @@ protected:
 	float peso_actual;//peso actual del colectivo
 	const float tarifa; //valor fijo de la tarifa
 	Ramal* ramal; //puntero al ramal correspondiente que tiene su lista de paradas
-	static int counter; //cuenta la cantidad de colectivos
+	//static int counter; //cuenta la cantidad de colectivos
 
 public:
 	//metodos
@@ -36,13 +36,14 @@ public:
 	void BajarSubirPasajero(Pasajero pasajero);
 	bool VerificarPesoCant(); //verifica que el peso y la cantidad de pasajeros sea la permitida
 	
-	static int GetCounter() { return counter; }
-
-	//preguntar gps						  
-	//string GPS();
 	
 	void ColectivoRoto(Colectivo colec_sano,Colectivo colec_roto);
 
+	ostream& operator<<(ostream& os, cListaT<T>& Lista)
+	{
+		os << To_String() << endl;
+		return os;
+	}
 
 
 	string To_String();
