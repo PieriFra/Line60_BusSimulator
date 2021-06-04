@@ -11,9 +11,8 @@ class Nuevo : public Colectivo
 public:
 	//metodos
 	//using Colectivo::Colectivo;
-	Nuevo(string codigo, unsigned int cant_max_pas, unsigned int cant_pasajeros,
-		unsigned int pasajeros_totales, bool aire, bool puerta, float monto_total,
-		float peso_max, float peso_actual);
+	Nuevo(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion,
+		float peso_max, float tarifa);
 	~Nuevo();
 
 	bool PrenderApagarAire();

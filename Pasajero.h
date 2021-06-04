@@ -10,9 +10,9 @@ class Pasajero
 {
 	friend Parada;
 private:
-	Parada parada_inicial;
+	Parada parada_inicial; //pasar por parametro??
 	Parada parada_final;
-	unsigned int nro_boleto;
+	unsigned int nro_boleto; //boleto unico del pasajero
 	float peso;//peso del pasajero
 	bool discapacidad;//true si usa silla de ruedas
 
@@ -23,7 +23,6 @@ public:
 
 	Parada GetParadaInicial() { return parada_inicial; }
 	Parada GetParadaFinal() { return parada_final; }
-	Pasajero GetPasajero() { return pasajero; }
 
 	string to_string();
 	void Imprimir();

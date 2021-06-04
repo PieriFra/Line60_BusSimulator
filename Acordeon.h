@@ -8,11 +8,10 @@ using namespace std;
 
 class Acordeon : public Nuevo
 {
-	static const int cant_ruedas=8;//chan
+	const int cant_ruedas=8;
 public:
-	Acordeon(string codigo, unsigned int cant_max_pas, unsigned int cant_pasajeros,
-		unsigned int pasajeros_totales, bool aire, bool puerta, float monto_total,
-		float peso_max, float peso_actual,static const int cant_ruedas);
+	Acordeon(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion,
+		float peso_max, float tarifa,static const int cant_ruedas);
 	~Acordeon();
 
 	bool PrenderApagarAire();

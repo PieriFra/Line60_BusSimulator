@@ -4,28 +4,30 @@
 #include <iostream>
 #include <ctime>
 using namespace std;
-
+class Pasajero;
+class Ramal;
 class Colectivo
 {
 protected:
-	string codigo_colec;
+	const string codigo_colec;
 	unsigned int cant_max_pas; //cantidad maxima de pasajeros
 	unsigned int cant_pasajeros; //pasajeros actuales en el colectivo
 	unsigned int pasajeros_totales;
-
+	unsigned int direccion; //direccion hidraulica (1), direccion electrica (2)
 	//ver aire
 	bool aire; //sera true si tiene aire
 	bool puerta;//sera true si la puerta esta abierta
 	float monto_total; //va guardando el monto juntado por dia
 	float peso_max; //peso maximo de pasajeros permitida
 	float peso_actual;//peso actual del colectivo
-	const float tarifa;
+	const float tarifa; //valor fijo de la tarifa
+	Ramal* ramal; //puntero al ramal correspondiente que tiene su lista de paradas
+	static int counter; //cuenta la cantidad de colectivos
 
 public:
 	//metodos
-	Colectivo(string codigo_colec, unsigned int cant_max_pas,unsigned int cant_pasajeros,
-		unsigned int pasajeros_totales,bool aire,bool puerta,float monto_total,
-		float peso_max,float peso_actual,const float tarifa);
+	Colectivo(string codigo_colec, unsigned int cant_max_pas,unsigned int direccion,
+		float peso_max,float tarifa,Ramal* ramal);
 	~Colectivo();
 
 	float CalcularTarifa(string codigo_parada);
@@ -34,10 +36,14 @@ public:
 	void BajarSubirPasajero(Pasajero pasajero);
 	bool VerificarPesoCant(); //verifica que el peso y la cantidad de pasajeros sea la permitida
 	
+	static int GetCounter() { return counter; }
+
 	//preguntar gps						  
 	//string GPS();
 	
 	void ColectivoRoto(Colectivo colec_sano,Colectivo colec_roto);
+
+
 
 	string To_String();
 	virtual void Imprimir()=0;

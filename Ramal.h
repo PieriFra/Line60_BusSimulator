@@ -1,16 +1,24 @@
 #pragma once
 
 #include "Definiciones.h"
-
+class Parada;
+template<class Parada>class cListaT;
 class Ramal
 {
 
-	eRamal1 ramal1;
-	eRamal2 ramal2;
-	eRamal3 ramal3;
+	string nombre;
+	string codigo_parada;
+	static cListaT<Parada>*ListaParadas;
+
 
 public:
-	Ramal(eRamal ramal1);
+	Ramal(string nombre, string codigo_parada, cListaT<Parada>* ListaParadas);
+	~Ramal();
+
+
+
+	string To_String();
+	void Imprimir();
 
 };
 

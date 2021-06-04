@@ -142,7 +142,7 @@
     <ClInclude Include="Acordeon.h" />
     <ClInclude Include="Colectivo.h" />
     <ClInclude Include="Definiciones.h" />
-    <ClInclude Include="ListaT.h" />
+    <ClInclude Include="cListaT.h" />
     <ClInclude Include="Nuevo.h" />
     <ClInclude Include="Parada.h" />
     <ClInclude Include="Pasajero.h" />
@@ -153,6 +153,7 @@
     <ClCompile Include="Acordeon.cpp" />
     <ClCompile Include="Colectivo.cpp" />
     <ClCompile Include="Definiciones.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Nuevo.cpp" />
     <ClCompile Include="Parada.cpp" />
     <ClCompile Include="Pasajero.cpp" />
