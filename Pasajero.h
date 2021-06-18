@@ -12,13 +12,13 @@ class Pasajero
 private:
 	int parada_inicial; //por codigo
 	int parada_final; //por codigo
-	unsigned int nro_boleto; //boleto unico del pasajero
+	string nro_boleto; //boleto unico del pasajero
 	float peso;//peso del pasajero
 	float dinero;
 	bool discapacidad;//true si usa silla de ruedas
 
 public:
-	Pasajero(int parada_final, unsigned int nro_boleto, bool discapacidad);
+	Pasajero(int parada_final, string nro_boleto, bool discapacidad);
 	~Pasajero();
 
 	void Pagar(float monto);
