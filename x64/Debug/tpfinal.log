@@ -1,0 +1,82 @@
+﻿  Acordeon.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,9): error C2143: syntax error: missing ';' before '<'
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,39): error C2238: unexpected token(s) preceding ';'
+  Colectivo.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,9): error C2143: syntax error: missing ';' before '<'
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,39): error C2238: unexpected token(s) preceding ';'
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(17,5): error C2065: 'ListaPasajerosCole': undeclared identifier
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(22,12): error C2065: 'ListaPasajerosCole': undeclared identifier
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(22,30): error C2541: 'delete': cannot delete objects that are not pointers
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(54,29): error C2065: 'ListaPasajerosCole': undeclared identifier
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(78,29): error C2065: 'ListaPasajerosCole': undeclared identifier
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(123,22): error C2065: 'ListaPasajerosCole': undeclared identifier
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(126,21): error C2065: 'ListaPasajerosCole': undeclared identifier
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(126,57): error C2065: 'ListaPasajerosCole': undeclared identifier
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(141,14): error C2065: 'ListaPasajerosCole': undeclared identifier
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(144,37): error C2065: 'ListaPasajerosCole': undeclared identifier
+  Definiciones.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,2): error C2365: 'RamalA': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalA'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,14): error C2365: 'RamalB': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalB'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,22): error C2365: 'RamalC': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalC'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,30): error C2365: 'RamalaD': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalaD'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(19,2): error C2371: 'eRamal': redefinition; different basic types
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(19): message : see declaration of 'eRamal'
+  Funciones.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,2): error C2365: 'RamalA': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalA'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,14): error C2365: 'RamalB': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalB'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,22): error C2365: 'RamalC': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalC'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,30): error C2365: 'RamalaD': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalaD'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(19,2): error C2371: 'eRamal': redefinition; different basic types
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(19): message : see declaration of 'eRamal'
+  main.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,2): error C2365: 'RamalA': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalA'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,14): error C2365: 'RamalB': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalB'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,22): error C2365: 'RamalC': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalC'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,30): error C2365: 'RamalaD': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalaD'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(19,2): error C2371: 'eRamal': redefinition; different basic types
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(19): message : see declaration of 'eRamal'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,2): error C2365: 'RamalA': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalA'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,14): error C2365: 'RamalB': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalB'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,22): error C2365: 'RamalC': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalC'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18,30): error C2365: 'RamalaD': redefinition; previous definition was 'enumerator'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(18): message : see declaration of 'RamalaD'
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(19,2): error C2371: 'eRamal': redefinition; different basic types
+C:\Users\Usuario\Desktop\TP Final-GIT\Definiciones.h(19): message : see declaration of 'eRamal'
+C:\Users\Usuario\Desktop\TP Final-GIT\main.cpp(14,68): error C2664: 'Ramal::Ramal(eRamal,int,cListaT<Parada> *)': cannot convert argument 1 from 'const char [20]' to 'eRamal'
+C:\Users\Usuario\Desktop\TP Final-GIT\main.cpp(14,28): message : There is no context in which this conversion is possible
+C:\Users\Usuario\Desktop\TP Final-GIT\Ramal.h(15,2): message : see declaration of 'Ramal::Ramal'
+C:\Users\Usuario\Desktop\TP Final-GIT\main.cpp(18,69): error C2664: 'Ramal::Ramal(eRamal,int,cListaT<Parada> *)': cannot convert argument 1 from 'const char [20]' to 'eRamal'
+C:\Users\Usuario\Desktop\TP Final-GIT\main.cpp(18,28): message : There is no context in which this conversion is possible
+C:\Users\Usuario\Desktop\TP Final-GIT\Ramal.h(15,2): message : see declaration of 'Ramal::Ramal'
+C:\Users\Usuario\Desktop\TP Final-GIT\main.cpp(100,20): warning C4018: '<': signed/unsigned mismatch
+  Nuevo.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,9): error C2143: syntax error: missing ';' before '<'
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,39): error C2238: unexpected token(s) preceding ';'
+  Parada.cpp
+  Pasajero.cpp
+  Ramal.cpp
+  Viejo.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,9): error C2143: syntax error: missing ';' before '<'
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.h(27,39): error C2238: unexpected token(s) preceding ';'
+C:\Users\Usuario\Desktop\TP Final-GIT\Viejo.cpp(4,1): error C2511: 'Viejo::Viejo(const std::string,unsigned int,unsigned int,float,const float,Ramal *)': overloaded member function not found in 'Viejo'
+C:\Users\Usuario\Desktop\TP Final-GIT\Viejo.h(10): message : see declaration of 'Viejo'
+  Generating Code...

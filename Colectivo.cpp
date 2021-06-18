@@ -1,6 +1,7 @@
 #include "Colectivo.h"
 #include "Parada.h"
 #include "Ramal.h"
+#include "Funciones.h"
 #include <stdlib.h>
 #define Tarifa 15
 #define Extra 5
@@ -150,9 +151,17 @@ bool Colectivo::VerificarPesoCant()
         return true;
 }
 
-bool Colectivo::ColectivoRoto(Colectivo* colec_sano, Colectivo* colec_roto)
+void Colectivo::ColectivoRoto(Colectivo* colec_sano, Colectivo* colec_roto)
 {
-
+    //preguntamos que tenga lugar para recibir los pasajeros del colectivo roto
+    if (colec_sano->GetCantMax() - colec_sano->GetCantActual() > colec_roto->GetCantActual())
+    {
+        colec_sano = colec_roto;
+        colec_sano->EstadoFunicionamiento = true;
+        AsignarRamal(colec_sano);
+    }
+    else
+        throw new exception("El colectivo auxiliar no posee lugar!");
 }
 
 string Colectivo::SistemaGPS()

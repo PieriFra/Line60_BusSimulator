@@ -7,15 +7,15 @@ int main()
 {
 	cListaT<Parada> *ListaParadas1 = new cListaT<Parada>();
 	ListaParadas1 = CargarLista(ListaParadas1);
-	Ramal* ramal1 = new Ramal("Lineal 60 - Ramal 1", 1, ListaParadas1);
+	Ramal* ramal1 = new Ramal(eRamal::RamalA, ListaParadas1);
 
 	cListaT<Parada>* ListaParadas2 = new cListaT<Parada>();
 	ListaParadas2 = CargarLista(ListaParadas2);
-	Ramal* ramal2 = new Ramal("Lineal 60 - Ramal 2", 6, ListaParadas2);
+	Ramal* ramal2 = new Ramal(eRamal::RamalB, ListaParadas2);
 
 	cListaT<Parada>* ListaParadas3 = new cListaT<Parada>();
 	ListaParadas3 = CargarLista(ListaParadas3);
-	Ramal* ramal3 = new Ramal("Lineal 60 - Ramal 3", 12, ListaParadas3);
+	Ramal* ramal3 = new Ramal(eRamal::RamalC, ListaParadas3);
 	
 	Colectivo* nuevo = new Nuevo("01",15,1,300,ramal1); 
 	Colectivo* viejo = new Viejo("02", 10, 2, 250, ramal2);
@@ -89,8 +89,12 @@ int main()
 
 		if (ListaColectivos->getItem(i)->GetEstado() == false)
 		{
-			ListaColectivos->getItem(i)->ColectivoRoto(ListaColectivos->getItem(i), ListaColectivos->getItem(i++));
-
+			try{
+				ListaColectivos->getItem(i)->ColectivoRoto(ListaColectivos->getItem(i), ListaColectivos->getItem(i++));
+			}
+			catch (exception& e){
+				cout << e.what() << endl;
+			}
 		}
 	}
 

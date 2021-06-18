@@ -21,6 +21,7 @@ public:
 	void PrenderApagarAire(bool Estado);
 
 	bool GetAire() { return aire; }
+
 	string to_string();
 	void Imprimir();
 

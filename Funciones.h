@@ -3,5 +3,4 @@
 
 
 cListaT<Parada> *CargarLista(cListaT<Parada>* Lista);
-bool VerificarLugar(Colectivo* C1, Colectivo* C2);
-
+void AsignarRamal(Colectivo* C);

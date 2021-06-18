@@ -39,12 +39,16 @@ public:
 	void BajarPasajero(Ramal* R);
 	bool VerificarPesoCant(); //verifica que el peso y la cantidad de pasajeros sea la permitida
 	
-	bool ColectivoRoto(Colectivo *colec_sano, Colectivo *colec_roto);
+	void ColectivoRoto(Colectivo *colec_sano, Colectivo *colec_roto);
+	
 
 	string SistemaGPS(); //retorna cada cinco minutos el nombre de la parada en la que se encuentra el colectivo
 
+	void SetRamal(Ramal* R) { ramal = R; }
 	void SetPuerta(bool puerta) { this->puerta = puerta; }
 	Ramal* GetRamal() { return ramal;}
+	unsigned int GetCantMax() { return cant_max_pas; }
+	unsigned int GetCantActual() { return cant_pasajeros; }
 	float GetMonto() { return monto_total; }
 	const string GetCodigo() { return codigo_colec; }
 	bool GetEstado() { return EstadoFunicionamiento; }

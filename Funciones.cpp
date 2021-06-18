@@ -42,12 +42,39 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 		aux->operator+(parada);
 	}
 }
-
-bool VerificarLugar(Colectivo* C1, Colectivo* C2)
+void AsignarRamal(Colectivo* C)
 {
-	if(C1.)
-	return false;
+	cListaT<Parada>* ListaParadas = new cListaT<Parada>();
+	ListaParadas = CargarLista(ListaParadas);
+	Ramal* ramal = new Ramal(ListaParadas);
+
+	int NumRamal = (rand() % 3) + 1;
+
+	switch (NumRamal)
+	{
+	case 1: {
+		ramal->SetNom(eRamal::RamalA);
+		ramal->SetCod(0);
+		break;}
+	case 2: {
+		ramal->SetNom(eRamal::RamalB);
+		ramal->SetCod(12);
+		break; }
+	case 3: {
+		ramal->SetNom(eRamal::RamalC);
+		ramal->SetCod(6);
+		break; }
+	case 4: {
+		ramal->SetNom(eRamal::RamalD);
+		ramal->SetCod(5);
+		break; }		
+	}
+
+	C->SetRamal(ramal);
+	delete ramal; //ver que puede tirar error
 }
+
+
 
 
 

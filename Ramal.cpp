@@ -1,9 +1,8 @@
 #include "Ramal.h"
 
-Ramal::Ramal(string nombre, int codigo_parada, cListaT<Parada>* ListaParadas)
+Ramal::Ramal(cListaT<Parada>* ListaParadas)
 {
-	this->nombre = nombre;
-	this->codigo_parada = codigo_parada;
+	codigo_parada = 0;
 	this->ListaParadas = ListaParadas;
 }
 

@@ -12,3 +12,8 @@
 #include "Viejo.h"
 #include "cListaT.h"
 #include "Parada.h"
+
+typedef enum 
+{
+	RamalA = 0, RamalB, RamalC, RamalD
+}eRamal;
