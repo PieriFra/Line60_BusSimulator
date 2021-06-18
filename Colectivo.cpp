@@ -2,20 +2,24 @@
 #include "Parada.h"
 #include "Ramal.h"
 #include <stdlib.h>
+#define Tarifa 15
+#define Extra 5
+
 
 Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion, float peso_max, 
      Ramal* ramal): codigo_colec(codigo_colec)
 {
-    
+    tarifa = Tarifa;
     this->cant_max_pas = cant_max_pas;
     this->direccion = direccion;
     this->peso_max = peso_max;
     this->ramal = ramal;
+    ListaPasajerosCole = new cListaT<Pasajero>();
 }
 
 Colectivo::~Colectivo()
 {
-    
+    delete ListaPasajerosCole;
 }
 
 float Colectivo::CalcularTarifa(int parada_inicial, int parada_final)
@@ -24,7 +28,7 @@ float Colectivo::CalcularTarifa(int parada_inicial, int parada_final)
     //cada para recorrida equivale a $5
 
     int diff = parada_final- parada_inicial;
-    float TarifaTot = tarifa + (abs(diff) * 5);
+    float TarifaTot = tarifa + (abs(diff) * Extra);
 
     return TarifaTot;
 }

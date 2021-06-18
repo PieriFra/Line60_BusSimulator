@@ -20,7 +20,7 @@ protected:
 	float monto_total; //va guardando el monto juntado por dia
 	float peso_max; //peso maximo de pasajeros permitida
 	float peso_actual;//peso actual del colectivo
-	const float tarifa; //valor fijo de la tarifa
+	float tarifa; //valor fijo de la tarifa
 	bool EstadoFunicionamiento; //true si esta sano, false si esta roto
 	Ramal* ramal; //puntero al ramal correspondiente que tiene su lista de paradas
 	//static int counter; //cuenta la cantidad de colectivos
