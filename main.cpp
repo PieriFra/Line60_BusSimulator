@@ -15,7 +15,7 @@ int main()
 
 	cListaT<Parada>* ListaParadas3 = new cListaT<Parada>();
 	ListaParadas3 = CargarLista(ListaParadas3);
-	Ramal* ramal3 = new Ramal("Lineal 60 - Ramal 1", 12, ListaParadas3);
+	Ramal* ramal3 = new Ramal("Lineal 60 - Ramal 3", 12, ListaParadas3);
 	
 	Colectivo* nuevo = new Nuevo("01",15,1,300,5, ramal1); 
 	Colectivo* viejo = new Viejo("02", 10, 2, 250,5, ramal2);
