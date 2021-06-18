@@ -12,6 +12,7 @@ private:
 
 public:
 	static cListaT<Parada>* ListaParadas;
+
 	Ramal(cListaT<Parada>* ListaParadas);
 	~Ramal();
 
