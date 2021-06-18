@@ -29,7 +29,7 @@ protected:
 public:
 	//metodos
 	Colectivo(string codigo_colec, unsigned int cant_max_pas,unsigned int direccion,
-		float peso_max, Ramal* ramal);
+		float peso_max);
 	~Colectivo();
 
 	float CalcularTarifa(int parada_inicial, int parada_final);

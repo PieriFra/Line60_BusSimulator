@@ -15,7 +15,7 @@ public:
 	//metodos
 	//using Colectivo::Colectivo;
 	Nuevo(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion,
-		float peso_max, Ramal *ramal);
+		float peso_max);
 	~Nuevo();
 
 	void PrenderApagarAire(bool Estado);

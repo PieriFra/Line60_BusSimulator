@@ -7,14 +7,13 @@
 #define Extra 5
 
 
-Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion, float peso_max, 
-     Ramal* ramal): codigo_colec(codigo_colec)
+Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion, float peso_max): codigo_colec(codigo_colec)
 {
     tarifa = Tarifa;
     this->cant_max_pas = cant_max_pas;
     this->direccion = direccion;
     this->peso_max = peso_max;
-    this->ramal = ramal;
+    ramal = NULL;
     ListaPasajerosCole = new cListaT<Pasajero>();
 }
 

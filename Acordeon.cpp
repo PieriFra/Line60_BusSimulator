@@ -3,8 +3,8 @@
 
 
 Acordeon::Acordeon(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion, 
-	float peso_max, Ramal* ramal): Nuevo (codigo_colec, cant_max_pas,
-		direccion, peso_max, ramal)
+	float peso_max): Nuevo (codigo_colec, cant_max_pas,
+		direccion, peso_max)
 {
 	this->cant_ruedas = 8;
 }

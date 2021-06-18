@@ -1,5 +1,6 @@
 #pragma once
 #include "Funciones.h"
+#include <sstream>
 
 cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 {
@@ -72,6 +73,35 @@ void AsignarRamal(Colectivo* C)
 
 	C->SetRamal(ramal);
 	delete ramal; //ver que puede tirar error
+}
+
+string InfoDia(cListaT<Colectivo>* Lista)
+{
+	stringstream Datos;
+
+	float monto_totalcolectivos = 0;
+	int totalidad_pasajeros = 0;
+
+	//recorremos la lista de colectivos
+	for (int i = 0; i < Lista->getCA(); i++)
+	{
+		//sumamos los montos de cada colectivo
+		monto_totalcolectivos = monto_totalcolectivos + Lista->getItem(i)->GetMonto();
+		//sumamos la cantidad de pasajeros que subieron en el dia por colectivo
+		totalidad_pasajeros = totalidad_pasajeros + Lista->getItem(i)->GetPasajerosTot();
+	}
+	Datos << "Monto total recolectado: " << monto_totalcolectivos << endl;
+	Datos << "Cantidad total de pasajeros: " << totalidad_pasajeros << endl;
+
+	//recorremos la lista de colectivos
+	for (int i = 0; i < Lista->getCA(); i++)
+	{
+		Datos << "Colectivo:" << Lista->getItem(i)->GetCodigo() << endl
+			<< "Ramal: " << Lista->getItem(i)->GetRamal()->GetNom() << "Total Pasajeros: " <<
+			Lista->getItem(i)->GetPasajerosTot() << endl
+			<< "Total Recaudado: " << Lista->getItem(i)->GetMonto() << endl;
+	}
+	return Datos.str();
 }
 
 

@@ -11,7 +11,7 @@ class Viejo : public Colectivo
 {
 public:
 	Viejo(const string codigo_colec, unsigned int cant_max_pas, unsigned int direccion,
-		float peso_max, Ramal *ramal);
+		float peso_max);
 	~Viejo();
 
 	string to_string();

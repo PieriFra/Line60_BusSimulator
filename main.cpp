@@ -2,25 +2,19 @@
 #include "Definiciones.h"
 #include "Funciones.h"
 
-
 int main()
 {
-	cListaT<Parada> *ListaParadas1 = new cListaT<Parada>();
-	ListaParadas1 = CargarLista(ListaParadas1);
-	Ramal* ramal1 = new Ramal(eRamal::RamalA, ListaParadas1);
+	//nos creamos un colectivo de cada clase
+	Colectivo* nuevo = new Nuevo("01",15,1,300); 
+	Colectivo* viejo = new Viejo("02", 10, 2, 250);
+	Nuevo* acordeon = new Acordeon("03", 20, 1, 350);
 
-	cListaT<Parada>* ListaParadas2 = new cListaT<Parada>();
-	ListaParadas2 = CargarLista(ListaParadas2);
-	Ramal* ramal2 = new Ramal(eRamal::RamalB, ListaParadas2);
+	//le asignamos un ramal a cada colectivo
+	AsignarRamal(nuevo);
+	AsignarRamal(viejo);
+	AsignarRamal(acordeon);
 
-	cListaT<Parada>* ListaParadas3 = new cListaT<Parada>();
-	ListaParadas3 = CargarLista(ListaParadas3);
-	Ramal* ramal3 = new Ramal(eRamal::RamalC, ListaParadas3);
-	
-	Colectivo* nuevo = new Nuevo("01",15,1,300,ramal1); 
-	Colectivo* viejo = new Viejo("02", 10, 2, 250, ramal2);
-	Nuevo* acordeon = new Acordeon("03", 20, 1, 350, ramal3);
-
+	//nos creamos la lista de colectivos
 	cListaT<Colectivo>* ListaColectivos = new cListaT<Colectivo>();
 	try{
 		ListaColectivos->AgregarItem(nuevo);
@@ -59,12 +53,16 @@ int main()
 				actual->PrenderApagarAire(true);
 		}
 
-		//bajamos pasajeros por cada colectivo que haya en la lista
-		ListaColectivos->getItem(i)->BajarPasajero(ListaColectivos->getItem(i)->GetRamal());
-		//subimos pasajeros por cada colectivo que haya en la lista
-		ListaColectivos->getItem(i)->SubirPasajero(ListaColectivos->getItem(i)->GetRamal());	
+		//recorremos la lista de paradas de cada colectivo
+		int incio = ListaColectivos->getItem(i)->GetRamal()->GetCod();
+		for (int i = incio; i < ListaColectivos->getItem(i)->GetRamal()->ListaParadas->getCA()-incio; i++)
+		{
+			//bajamos pasajeros por cada colectivo que haya en la lista
+			ListaColectivos->getItem(i)->BajarPasajero(ListaColectivos->getItem(i)->GetRamal());
+			//subimos pasajeros por cada colectivo que haya en la lista
+			ListaColectivos->getItem(i)->SubirPasajero(ListaColectivos->getItem(i)->GetRamal());
+		}
 		
-
 		//apagamos los aires
 		for (unsigned int i = 0; i < ListaColectivos->getCA(); i++)
 		{
@@ -79,6 +77,9 @@ int main()
 					actual->PrenderApagarAire(false);
 			}
 		}
+
+		//cuando el colectivo termina su recorrido, le asignamos un nuevo ramal de manera dinamica	
+		AsignarRamal(ListaColectivos->getItem(i));
 
 		string nom; //variable aux
 		//llamamos al metodo gps
@@ -99,16 +100,7 @@ int main()
 	}
 
 	//imprimimos monto total de cada colectivo, cantidad de pasajeros que se suben y el total de todos los colectivos
-	float monto_totalcolectivos = 0;
-	int totalidad_pasajeros = 0;
-	ListaColectivos->Listar();
-	for (int i = 0; i < ListaColectivos->getCA(); i++)
-	{
-		monto_totalcolectivos = monto_totalcolectivos + ListaColectivos->getItem(i)->GetMonto();
-		totalidad_pasajeros = totalidad_pasajeros + ListaColectivos->getItem(i)->GetPasajerosTot();
-	}
-	cout << "Monto total recolectado: " << monto_totalcolectivos << endl;
-	cout << "Cantidad total de pasajeros: " << totalidad_pasajeros << endl;
+	cout << InfoDia(ListaColectivos) << endl;
 
 	return 0;
 }
