@@ -7,9 +7,16 @@
 #define Extra 5
 
 
-Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion, float peso_max): codigo_colec(codigo_colec)
+Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, eDireccion direccion, 
+    float peso_max): codigo_colec(codigo_colec)
 {
     tarifa = Tarifa;
+    puerta = false;
+    EstadoFunicionamiento = true;
+    peso_actual = 0;
+    cant_pasajeros = 0;
+    pasajeros_totales = 0;
+    monto_total = 0;
     this->cant_max_pas = cant_max_pas;
     this->direccion = direccion;
     this->peso_max = peso_max;

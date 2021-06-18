@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <ctime>
+#include "Definiciones.h"
 using namespace std;
 class Pasajero;
 class Ramal;
@@ -15,7 +16,7 @@ protected:
 	unsigned int cant_max_pas; //cantidad maxima de pasajeros
 	unsigned int cant_pasajeros; //pasajeros actuales en el colectivo
 	unsigned int pasajeros_totales;
-	unsigned int direccion; //direccion hidraulica (1), direccion electrica (2)
+	eDireccion direccion; //direccion hidraulica (1), direccion electrica (2)
 	bool puerta;//sera true si la puerta esta abierta
 	float monto_total; //va guardando el monto juntado por dia
 	float peso_max; //peso maximo de pasajeros permitida
@@ -28,7 +29,7 @@ protected:
 
 public:
 	//metodos
-	Colectivo(string codigo_colec, unsigned int cant_max_pas,unsigned int direccion,
+	Colectivo(string codigo_colec, unsigned int cant_max_pas,eDireccion direccion,
 		float peso_max);
 	~Colectivo();
 

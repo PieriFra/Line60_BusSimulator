@@ -1,6 +1,7 @@
 #pragma once
 #include "Funciones.h"
 #include <sstream>
+#include <stdlib.h>
 
 cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 {
@@ -43,7 +44,7 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 		aux->operator+(parada);
 	}
 }
-void AsignarRamal(Colectivo* C)
+Ramal* GenerarRamal()
 {
 	cListaT<Parada>* ListaParadas = new cListaT<Parada>();
 	ListaParadas = CargarLista(ListaParadas);
@@ -56,7 +57,7 @@ void AsignarRamal(Colectivo* C)
 	case 1: {
 		ramal->SetNom(eRamal::RamalA);
 		ramal->SetCod(0);
-		break;}
+		break; }
 	case 2: {
 		ramal->SetNom(eRamal::RamalB);
 		ramal->SetCod(12);
@@ -68,11 +69,30 @@ void AsignarRamal(Colectivo* C)
 	case 4: {
 		ramal->SetNom(eRamal::RamalD);
 		ramal->SetCod(5);
-		break; }		
+		break; }
 	}
 
-	C->SetRamal(ramal);
-	delete ramal; //ver que puede tirar error
+	return ramal;
+}
+void AsignarRamal(Colectivo* C)
+{
+	Ramal* aux = GenerarRamal();
+	if (C->GetRamal() == NULL)
+		C->SetRamal(aux);
+	else
+	{
+		//llamamos a la funcion generar ramal hasta que nos genere un ramal cuya para incial 
+		//sea igual a la parada final de nuestro ramal actual
+		do
+		{
+			C->SetRamal(aux);
+
+		} while (abs(C->GetRamal()->GetCod()-aux->GetCod())!=1 || 
+			abs(C->GetRamal()->GetCod() - aux->GetCod()) != 12); 
+	}
+
+	
+	delete aux; //ver que puede tirar error
 }
 
 string InfoDia(cListaT<Colectivo>* Lista)

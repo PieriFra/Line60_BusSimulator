@@ -5,9 +5,9 @@
 int main()
 {
 	//nos creamos un colectivo de cada clase
-	Colectivo* nuevo = new Nuevo("01",15,1,300); 
-	Colectivo* viejo = new Viejo("02", 10, 2, 250);
-	Nuevo* acordeon = new Acordeon("03", 20, 1, 350);
+	Colectivo* nuevo = new Nuevo("01",15,eDireccion::Electrica,300); 
+	Colectivo* viejo = new Viejo("02", 10, eDireccion::Hidraulica, 250);
+	Nuevo* acordeon = new Acordeon("03", 20, eDireccion::Electrica, 350);
 
 	//le asignamos un ramal a cada colectivo
 	AsignarRamal(nuevo);
