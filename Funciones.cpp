@@ -43,5 +43,11 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 	}
 }
 
+bool VerificarLugar(Colectivo* C1, Colectivo* C2)
+{
+	if(C1.)
+	return false;
+}
+
 
 

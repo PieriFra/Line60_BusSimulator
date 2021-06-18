@@ -9,13 +9,14 @@ class Ramal;
 
 class Acordeon : public Nuevo
 {
-	const int cant_ruedas;
+private: 
+	int cant_ruedas;
 public:
 	Acordeon(string codigo_colec, unsigned int cant_max_pas, unsigned int direccion,
-		float peso_max, float tarifa, Ramal *ramal);
+		float peso_max, Ramal *ramal);
 	~Acordeon();
 
-	void PrenderApagarAire( bool Estado);
+	//void PrenderApagarAire( bool Estado); ya esta en el padre!!
 	
 	bool GetAire() { return aire; }
 	string to_string();

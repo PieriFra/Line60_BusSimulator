@@ -1,10 +1,12 @@
 #pragma once
-
+#define _CRT_SECURE_NO_WARNINGS
 #include "Definiciones.h"
 class Parada;
 template<class Parada>class cListaT;
+
 class Ramal
 {
+private:
 	string nombre;
 	int codigo_parada;
 

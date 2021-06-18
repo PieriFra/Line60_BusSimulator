@@ -19,6 +19,8 @@ public:
 	Parada(int codigo_parada, string nombre_parada, string direccion, cListaT<Pasajero>* ListaPasajeros);
 	~Parada();
 
+	friend class Colectivo;
+
 	int GetCodigoParada() { return codigo_parada; }
 	string to_string();
 	void Imprimir();

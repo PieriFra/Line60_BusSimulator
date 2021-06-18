@@ -17,9 +17,9 @@ int main()
 	ListaParadas3 = CargarLista(ListaParadas3);
 	Ramal* ramal3 = new Ramal("Lineal 60 - Ramal 3", 12, ListaParadas3);
 	
-	Colectivo* nuevo = new Nuevo("01",15,1,300,5, ramal1); 
-	Colectivo* viejo = new Viejo("02", 10, 2, 250,5, ramal2);
-	Nuevo* acordeon = new Acordeon("03", 20, 1, 350, 5, ramal3);
+	Colectivo* nuevo = new Nuevo("01",15,1,300,ramal1); 
+	Colectivo* viejo = new Viejo("02", 10, 2, 250, ramal2);
+	Nuevo* acordeon = new Acordeon("03", 20, 1, 350, ramal3);
 
 	cListaT<Colectivo>* ListaColectivos = new cListaT<Colectivo>();
 	try{
@@ -59,12 +59,11 @@ int main()
 				actual->PrenderApagarAire(true);
 		}
 
-		//abrimos las puertas del colectivo
-		ListaColectivos->getItem(i)->SetPuerta(true);
-		//subimos y bajamos pasajeros por cada colectivo que haya en la lista
-		ListaColectivos->getItem(i)->BajarSubirPasajero(ListaColectivos->getItem(i)->GetRamal());
-		//abrimos las puertas del colectivo
-		ListaColectivos->getItem(i)->SetPuerta(false);
+		//bajamos pasajeros por cada colectivo que haya en la lista
+		ListaColectivos->getItem(i)->BajarPasajero(ListaColectivos->getItem(i)->GetRamal());
+		//subimos pasajeros por cada colectivo que haya en la lista
+		ListaColectivos->getItem(i)->SubirPasajero(ListaColectivos->getItem(i)->GetRamal());	
+		
 
 		//apagamos los aires
 		for (unsigned int i = 0; i < ListaColectivos->getCA(); i++)
@@ -91,6 +90,7 @@ int main()
 		if (ListaColectivos->getItem(i)->GetEstado() == false)
 		{
 			ListaColectivos->getItem(i)->ColectivoRoto(ListaColectivos->getItem(i), ListaColectivos->getItem(i++));
+
 		}
 	}
 

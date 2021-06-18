@@ -6,6 +6,7 @@
 using namespace std;
 class Pasajero;
 class Ramal;
+class Parada;
 
 class Colectivo
 {
@@ -23,19 +24,22 @@ protected:
 	bool EstadoFunicionamiento; //true si esta sano, false si esta roto
 	Ramal* ramal; //puntero al ramal correspondiente que tiene su lista de paradas
 	//static int counter; //cuenta la cantidad de colectivos
+	cListaT<Pasajero>* ListaPasajerosCole;
 
 public:
 	//metodos
 	Colectivo(string codigo_colec, unsigned int cant_max_pas,unsigned int direccion,
-		float peso_max, float tarifa, Ramal* ramal);
+		float peso_max, Ramal* ramal);
 	~Colectivo();
 
-	float CalcularTarifa(int parada_incial, int parada_final);
+	float CalcularTarifa(int parada_inicial, int parada_final);
 	
-	void BajarSubirPasajero(Ramal *ramal);
+	void SubirPasajero(Ramal *R);
+	void Cobrar(Pasajero* P, float monto);
+	void BajarPasajero(Ramal* R);
 	bool VerificarPesoCant(); //verifica que el peso y la cantidad de pasajeros sea la permitida
 	
-	void ColectivoRoto(Colectivo *colec_sano, Colectivo *colec_roto);
+	bool ColectivoRoto(Colectivo *colec_sano, Colectivo *colec_roto);
 
 	string SistemaGPS(); //retorna cada cinco minutos el nombre de la parada en la que se encuentra el colectivo
 
