@@ -10,7 +10,7 @@ template<class Pasajero>class cListaT;
 class Parada
 {
 private:
-	int codigo_parada; //codigo de la parada
+	const int codigo_parada; //codigo de la parada
 	string nombre_parada;
 	string direccion;
 	cListaT<Pasajero>* ListaPasajeros;
