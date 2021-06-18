@@ -103,11 +103,12 @@ void Colectivo::Cobrar(Pasajero* P, float monto)
     {
         P->Pagar(monto);
     }
-    catch (exception&e)
+    catch (exception& e)
     {
         throw e;
-        
+
     }
+    monto_total = monto_total + monto;
 }
 
 void Colectivo::BajarPasajero(Ramal* R)
