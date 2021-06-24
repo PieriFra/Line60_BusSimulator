@@ -11,3 +11,18 @@ Parada::Parada(int codigo_parada, string nombre_parada, string direccion,
 Parada::~Parada()
 {
 }
+
+string Parada::To_String()
+{
+	stringstream spa;
+
+	spa << "Parada: " << nombre_parada << endl;
+	spa << "Direccion: " << direccion << endl;
+
+	return spa.str();
+}
+
+void Parada::Imprimir()
+{
+	cout << To_String() << endl;
+}

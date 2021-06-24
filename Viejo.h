@@ -14,7 +14,7 @@ public:
 		float peso_max);
 	~Viejo();
 
-	string to_string();
+	string To_String();
 	void Imprimir();
 
 };

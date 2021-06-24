@@ -22,7 +22,7 @@ public:
 
 	bool GetAire() { return aire; }
 
-	string to_string();
+	string To_String();
 	void Imprimir();
 
 };

@@ -14,4 +14,17 @@ Acordeon::~Acordeon()
 
 }
 
+string Acordeon::To_String()
+{
+	stringstream sa;
+	sa << "Colectivo: Codigo " << codigo_colec << endl;
+	sa << "Cantidad de pasajeros: " << cant_pasajeros << endl;
+	sa << "Peso actual: " << peso_actual << endl;
 
+	return sa.str();
+}
+
+void Acordeon::Imprimir()
+{
+	cout << To_String() << endl;
+}

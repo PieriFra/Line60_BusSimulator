@@ -2,15 +2,17 @@
 #include "Funciones.h"
 #include <sstream>
 #include <stdlib.h>
+#include <ctime>
 
 cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 {
 	cListaT <Parada>* aux = Lista;
-	string NomParada[12] = { "Catedra", "Juramento", "Olleros", "Carranza", "Pueyrredon", "Tribunales", "Cabildo", "Palermo", "PlazaItalia", "Congreso", "Bulnes", "Aguero" };
+	string NomParada[12] = { "Catedral", "Juramento", "Olleros", "Carranza", "Pueyrredon", "Tribunales", "Cabildo", "Palermo", "PlazaItalia", "Congreso", "Bulnes", "Aguero" };
 	string DireParadas[12] = { "a","b","c","d","e","f", "g", "h", "i", "j", "k", "L" };
 
 	for (int i = 0; i < 12; i++) //recorremos la lista de paradas
 	{
+		srand(time(0));
 		int cantPasajeros = (rand() % 11) + 1;
 		cListaT<Pasajero>* ListaPasajeros = new cListaT<Pasajero>();
 
@@ -18,8 +20,13 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 		{
 			if (j % 5 == 0 && j > 0)
 			{
+				srand(time(0));
+				int parada_final = 1 + (rand() % (13 - 1));
+				//string nro_boleto = (1 + (rand() % (20))); aca esta tirando el error
+
+				Pasajero* pasajero_discapacitado = new Pasajero(parada_final,pasajero_discapacitado->GetNroBoleto(), true);
 				try {
-					Pasajero* pasajero_discapacitado = new Pasajero((1 + (rand() % (13 - 1))), (1 + (rand() % (20))), true);
+					//Pasajero* pasajero_discapacitado = new Pasajero((1 + (rand() % (13 - 1))), (1 + (rand() % (20))), true);
 					ListaPasajeros->AgregarItem(pasajero_discapacitado);
 				}
 				catch (exception* ex) {

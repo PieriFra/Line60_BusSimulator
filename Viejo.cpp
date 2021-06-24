@@ -9,3 +9,18 @@ Viejo::Viejo(string codigo_colec, unsigned int cant_max_pas, unsigned int direcc
 Viejo::~Viejo()
 {
 }
+
+string Viejo::To_String()
+{
+	stringstream sv;
+	sv << "Colectivo: Codigo " << codigo_colec << endl;
+	sv << "Cantidad de pasajeros: " << cant_pasajeros << endl;
+	sv << "Peso actual: " << peso_actual << endl;
+
+	return sv.str();
+}
+
+void Viejo::Imprimir()
+{
+	cout << To_String() << endl;
+}

@@ -22,7 +22,7 @@ public:
 	friend class Colectivo;
 
 	int GetCodigoParada() { return codigo_parada; }
-	string to_string();
+	string To_String();
 	void Imprimir();
 };
 

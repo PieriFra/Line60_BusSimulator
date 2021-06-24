@@ -15,3 +15,18 @@ void Nuevo::PrenderApagarAire(bool Estado)
 	else
 		Estado = true;
 }
+
+string Nuevo::To_String()
+{
+	stringstream sn;
+	sn << "Colectivo: Codigo " << codigo_colec << endl;
+	sn << "Cantidad de pasajeros: " << cant_pasajeros << endl;
+	sn << "Peso actual: " << peso_actual << endl;
+
+	return sn.str();
+}
+
+void Nuevo::Imprimir()
+{
+	cout << To_String() << endl;
+}

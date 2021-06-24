@@ -102,5 +102,10 @@ int main()
 	//imprimimos monto total de cada colectivo, cantidad de pasajeros que se suben y el total de todos los colectivos
 	cout << InfoDia(ListaColectivos) << endl;
 
+
+	delete nuevo;
+	delete viejo;
+	delete acordeon;
+
 	return 0;
 }

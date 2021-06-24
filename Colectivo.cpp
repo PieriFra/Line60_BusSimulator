@@ -51,7 +51,7 @@ void Colectivo::SubirPasajero(Ramal *R)
             puerta = true;
             if (VerificarPesoCant()==true) 
             {
-                //subimos primero los pasajeros con discapasidad
+                //subimos primero los pasajeros con discapacidad
                 if (i == R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetParadaInicial() &&
                     R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetDisc() == true)
                 {
@@ -66,7 +66,14 @@ void Colectivo::SubirPasajero(Ramal *R)
                             break; // no suben mas pasajeros
                         }
                         //eliminamos de la lista de pasajeros de la parada, al pasajero que subimos
-                        R->ListaParadas->getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
+                        
+                        //ver de manejar la excepcion de eliminar item
+                        try {
+                            R->ListaParadas->getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
+                        }
+                        catch (exception* e) {
+                            cout << e->what() << endl;
+                        }
                         this->cant_pasajeros = cant_pasajeros + 1;
                         this->pasajeros_totales = pasajeros_totales + 1;
                     }
@@ -90,7 +97,14 @@ void Colectivo::SubirPasajero(Ramal *R)
                             break; // no suben mas pasajeros
                         }
                         //eliminamos de la lista de pasajeros de la parada, al pasajero que subimos
-                        R->ListaParadas->getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
+                        
+                        //manejar excepcion
+                        try {
+                            R->ListaParadas->getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
+                        }
+                        catch (exception* e) {
+                            cout << e->what() << endl;
+                        }
                         this->cant_pasajeros = cant_pasajeros + 1;
                         this->pasajeros_totales = pasajeros_totales + 1;
                     }
@@ -139,23 +153,23 @@ void Colectivo::BajarPasajero(Ramal* R)
                 this->cant_pasajeros = cant_pasajeros - 1;
             }
         }
-        //cerramos la puerts
+        //cerramos la puerta
         puerta = false;
     }
 }
 
 bool Colectivo::VerificarPesoCant()
 {
-    int ca = ListaPasajerosCole->getCA();
+    int ca = ListaPasajerosCole->getCA(); //cantidad de pasajeros en la lista
     for (int i = 0; i < ca; i++)
     {
         peso_actual = peso_actual + ListaPasajerosCole->getItem(i)->GetPeso();
     }
     
     if (cant_max_pas <= cant_pasajeros || peso_max <= peso_actual)
-        return false;
+        return false; //si supera la capacidad de pasajeros o la capacidad de peso
     else 
-        return true;
+        return true;//hay lugar para que suban mas pasajeros y no superan la capacidad de peso
 }
 
 void Colectivo::ColectivoRoto(Colectivo* colec_sano, Colectivo* colec_roto)
@@ -163,12 +177,14 @@ void Colectivo::ColectivoRoto(Colectivo* colec_sano, Colectivo* colec_roto)
     //preguntamos que tenga lugar para recibir los pasajeros del colectivo roto
     if (colec_sano->GetCantMax() - colec_sano->GetCantActual() > colec_roto->GetCantActual())
     {
-        colec_sano = colec_roto;
+        colec_sano = colec_roto; //ver aca!
         colec_sano->EstadoFunicionamiento = true;
         AsignarRamal(colec_sano);
     }
     else
         throw new exception("El colectivo auxiliar no posee lugar!");
+
+    //deberiamos llamar a otro colectivo hasta que uno rescate al colectivo roto?
 }
 
 string Colectivo::SistemaGPS()
@@ -176,3 +192,20 @@ string Colectivo::SistemaGPS()
 
     return string();
 }
+
+string Colectivo::To_String()
+{
+    stringstream sc;
+    sc << "Colectivo: Codigo " << codigo_colec << endl;
+    sc << "Cantidad de pasajeros: " << cant_pasajeros << endl;
+    sc << "Peso actual: " << peso_actual << endl;
+
+    return sc.str();
+}
+
+/* Imprimir es virtual, la implementamos en las clases hijas
+void Colectivo::Imprimir()
+{
+    cout << To_String() << endl;
+}
+*/
