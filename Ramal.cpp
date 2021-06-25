@@ -4,6 +4,7 @@ Ramal::Ramal(cListaT<Parada>* ListaParadas)
 {
 	nombre = eRamal::RamalA;
 	codigo_parada = 0;
+	codigo_final = codigo_parada - 1;
 	this->ListaParadas = ListaParadas;
 }
 

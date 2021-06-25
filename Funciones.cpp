@@ -103,10 +103,10 @@ void AsignarRamal(Colectivo* C)
 		//sea igual a la parada final de nuestro ramal actual
 		do
 		{
+			Ramal* aux = GenerarRamal();
 			C->SetRamal(aux);
 
-		} while (abs(C->GetRamal()->GetCod()-aux->GetCod())!=1 || 
-			abs(C->GetRamal()->GetCod() - aux->GetCod()) != 12); 
+		} while (C->GetRamal()->GetFinal()!=aux->GetCod()); 
 	}
 
 	

@@ -9,7 +9,7 @@ class Ramal
 private:
 	eRamal nombre;
 	int codigo_parada;
-
+	int codigo_final;
 public:
 	static cListaT<Parada>* ListaParadas;
 
@@ -17,6 +17,7 @@ public:
 	~Ramal();
 
 	int GetCod() { return codigo_parada; }
+	int GetFinal() { return codigo_final; }
 	eRamal GetNom() { return nombre; }
 	void SetNom(eRamal nom) { nom = nombre; }
 	void SetCod(int cod) { cod = codigo_parada; }
