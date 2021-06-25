@@ -11,17 +11,11 @@ Acordeon::Acordeon(string codigo_colec, unsigned int cant_max_pas, eDireccion di
 Acordeon::~Acordeon()
 {}
 
-string Acordeon::To_String()
+ostream& operator<<(ostream& os, const Acordeon& A)
 {
-	stringstream sa;
-	sa << "Colectivo: Codigo " << codigo_colec << endl;
-	sa << "Cantidad de pasajeros: " << cant_pasajeros << endl;
-	sa << "Peso actual: " << peso_actual << endl;
+	const Colectivo& C = A;
+	os << C;
+	os << "Cantidad de ruedas: " << A.GetRuedas() << endl;
 
-	return sa.str();
-}
-
-void Acordeon::Imprimir()
-{
-	cout << To_String() << endl;
+	return os;
 }

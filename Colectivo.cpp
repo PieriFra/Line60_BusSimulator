@@ -217,12 +217,12 @@ string Colectivo::SistemaGPS()
 
 ostream& Colectivo::operator<<(ostream& os)
 {
-    os << "Colectivo: Codigo " << codigo_colec << endl;
+    os << "Colectivo:"<<endl<< "Codigo " << codigo_colec << endl;
     os << "Cantidad de pasajeros: " << cant_pasajeros << endl;
     os << "Peso actual: " << peso_actual << endl;
+    os << "Ramal: " << ramal << endl;
 
     return os;
-    // TODO: insert return statement here
 }
 
 /* Imprimir es virtual, la implementamos en las clases hijas

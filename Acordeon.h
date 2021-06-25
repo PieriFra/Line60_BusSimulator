@@ -19,7 +19,10 @@ public:
 	//void PrenderApagarAire( bool Estado); ya esta en el padre!!
 	
 	bool GetAire() { return aire; }
-	string To_String();
-	void Imprimir();
+	int GetRuedas() const { return cant_ruedas; }
+	
+	friend ostream& operator<<(ostream& os, const Acordeon& A);
+	/*string To_String();
+	void Imprimir();*/
 };
 
