@@ -86,7 +86,7 @@ int main()
 		nom = ListaColectivos->getItem(i)->SistemaGPS(); 
 		//impirimimos por codigo de colectivo la parada en la que se encuentra
 		cout << "El colectivo " << ListaColectivos->getItem(i)->GetCodigo()
-			<< "se encuntra en la parada: " << nom;
+			<< "se encuentra en la parada: " << nom;
 
 		if (ListaColectivos->getItem(i)->GetEstado() == false)
 		{
@@ -103,6 +103,8 @@ int main()
 	cout << InfoDia(ListaColectivos) << endl;
 
 
+
+	//ver liberar memoria
 	delete nuevo;
 	delete viejo;
 	delete acordeon;

@@ -36,8 +36,9 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 			}
 			else
 			{
+				srand(time(0));
 				try {
-					Pasajero* pasajero = new Pasajero((1 + (rand() % (13 - 1))), (1 + (rand() % (20))), true);
+					Pasajero* pasajero = new Pasajero((1 + (rand() % (13 - 1))), pasajero->GetNroBoleto(), true);
 					ListaPasajeros->AgregarItem(pasajero);
 				}
 				catch (exception* ex) {
@@ -56,7 +57,8 @@ Ramal* GenerarRamal()
 	cListaT<Parada>* ListaParadas = new cListaT<Parada>();
 	ListaParadas = CargarLista(ListaParadas);
 	Ramal* ramal = new Ramal(ListaParadas);
-
+	
+	srand(time(0));
 	int NumRamal = (rand() % 3) + 1;
 
 	switch (NumRamal)
@@ -88,7 +90,7 @@ void AsignarRamal(Colectivo* C)
 		C->SetRamal(aux);
 	else
 	{
-		//llamamos a la funcion generar ramal hasta que nos genere un ramal cuya para incial 
+		//llamamos a la funcion GenerarRamal hasta que nos genere un ramal cuya parada inicial 
 		//sea igual a la parada final de nuestro ramal actual
 		do
 		{
@@ -129,6 +131,14 @@ string InfoDia(cListaT<Colectivo>* Lista)
 			<< "Total Recaudado: " << Lista->getItem(i)->GetMonto() << endl;
 	}
 	return Datos.str();
+}
+
+//metodo que se llama una vez por minuto, actualiza el estado de todos los objetos
+void MetodoTICK() 
+{
+	int TICK = 360; //6 horas, 360 minutos
+
+
 }
 
 
