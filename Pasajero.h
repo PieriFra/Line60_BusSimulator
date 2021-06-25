@@ -21,7 +21,7 @@ private:
 
 public:
 	//Pasajero(int parada_final, string nro_boleto, bool discapacidad);
-	Pasajero(int parada_final, int nro_boleto, bool discapacidad);
+	Pasajero(int parada_final,int parada_inicial, int nro_boleto, bool discapacidad);
 	~Pasajero();
 
 	void Pagar(float monto);

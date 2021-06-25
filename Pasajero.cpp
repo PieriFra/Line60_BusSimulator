@@ -1,10 +1,10 @@
 #include "Pasajero.h"
 #include <stdlib.h>
 #define Dinero 500
-Pasajero::Pasajero(int parada_final, int nro_boleto, bool discapacidad):nro_boleto(contador++)
+Pasajero::Pasajero(int parada_final, int parada_inicial, int nro_boleto, bool discapacidad) :nro_boleto(contador++)
 {
 	dinero = Dinero;
-	parada_inicial = 0;
+	this->parada_inicial = parada_inicial;
 	this->discapacidad = discapacidad;
 	peso = 65;
 	this->parada_final = parada_final;
