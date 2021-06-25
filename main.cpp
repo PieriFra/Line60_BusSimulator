@@ -1,7 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Definiciones.h"
 #include "Funciones.h"
+
 #define TICK 480
+
 int main()
 {
 	//nos creamos un colectivo de cada clase
@@ -41,9 +43,18 @@ int main()
 	
 	for (int i = 0; i < TICK; i++)
 	{
+		
 		//recorremos la lista de colectivos
 		for (unsigned int i = 0; i < ListaColectivos->getCA(); i++)
 		{
+			if (i % 5 == 0) //cada 5 min actualizamos la poscion 
+			{
+				int pos = ListaColectivos->getItem(i)->GetParada();
+				string nombre=ListaColectivos->getItem(i)->GetRamal()->ListaParadas->getItem(pos)->GetNombre();
+				cout << "Colectivo: " << ListaColectivos->getItem(i)->GetClave()
+					<< "se encuentra en la parada: " << nombre << endl;
+			}
+
 			if (Acordeon* actual = dynamic_cast<Acordeon*>(ListaColectivos->getItem(i))) //ver
 			{
 				if (actual->GetAire() == false)
@@ -60,6 +71,8 @@ int main()
 			int incio = ListaColectivos->getItem(i)->GetRamal()->GetCod();
 			for (int i = incio; i < ListaColectivos->getItem(i)->GetRamal()->ListaParadas->getCA() - incio; i++)
 			{
+				//vamos actualizando la parada actual en la que se encuentra 
+				ListaColectivos->getItem(i)->SetParada(i);
 				//bajamos pasajeros por cada colectivo que haya en la lista
 				ListaColectivos->getItem(i)->BajarPasajero(ListaColectivos->getItem(i)->GetRamal());
 				//subimos pasajeros por cada colectivo que haya en la lista
@@ -84,15 +97,7 @@ int main()
 			//cuando el colectivo termina su recorrido, le asignamos un nuevo ramal de manera dinamica	
 			AsignarRamal(ListaColectivos->getItem(i));
 
-			if (i % 5 == 0) //cada 5 min actualizamos la poscion 
-			{
-			string nom; //variable aux
-			//llamamos al metodo gps
-			nom = ListaColectivos->getItem(i)->SistemaGPS();
-			//impirimimos por codigo de colectivo la parada en la que se encuentra
-			cout << "El colectivo " << ListaColectivos->getItem(i)->GetClave()
-				<< "se encuentra en la parada: " << nom;
-			}
+		
 			
 		}
 
@@ -102,7 +107,8 @@ int main()
 	viejo->SetEstado(false);
 	viejo->ColectivoRoto(ListaColectivos, viejo);
 	//imprimimos monto total de cada colectivo, cantidad de pasajeros que se suben y el total de todos los colectivos
-	cout << InfoDia(ListaColectivos) << endl;
+	string info = InfoDia(ListaColectivos);
+	cout << info << endl;
 
 
 

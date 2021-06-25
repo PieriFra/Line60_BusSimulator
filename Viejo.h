@@ -3,7 +3,6 @@
 #include "Colectivo.h"
 
 using namespace std;
-class Ramal;
 
 class Viejo : public Colectivo
 {

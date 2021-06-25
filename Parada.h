@@ -23,6 +23,7 @@ public:
 
 	friend class Colectivo;
 
+	string GetNombre() { return nombre_parada; }
 	int GetCodigoParada() { return codigo_parada; }
 };
 

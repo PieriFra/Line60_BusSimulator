@@ -1,7 +1,7 @@
 #pragma once
 #include "Nuevo.h"
+
 using namespace std;
-class Ramal;
 
 class Acordeon : public Nuevo
 {

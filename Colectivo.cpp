@@ -7,6 +7,7 @@ Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, eDireccion 
     float peso_max): codigo_colec(codigo_colec)
 {
     tarifa = Tarifa;
+    parada = 0;
     puerta = false;
     EstadoFunicionamiento = true;
     peso_actual = 0;
@@ -190,12 +191,6 @@ void Colectivo::ColectivoRoto(cListaT<Colectivo>* Lista, Colectivo* colec_roto)
             }
         }
     }
-}
-
-string Colectivo::SistemaGPS()
-{
-
-    return string();
 }
 
 ostream& Colectivo::operator<<(ostream& os)

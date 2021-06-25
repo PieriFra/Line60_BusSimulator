@@ -1,5 +1,5 @@
-#define _CRT_SECURE_NO_WARNINGS
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include "Funciones.h"
 
 
@@ -96,25 +96,25 @@ Ramal* GenerarRamal()
 
 	return ramal;
 }
-void AsignarRamal(Colectivo* C)
+void AsignarRamal(Colectivo* Cole)
 {
-	Ramal* aux = GenerarRamal();
-	if (C->GetRamal() == NULL)
-		C->SetRamal(aux);
-	else
+	Ramal* aux = NULL;
+	if (Cole->GetRamal() == NULL)
 	{
-		//llamamos a la funcion GenerarRamal hasta que nos genere un ramal cuya parada inicial 
+		aux = GenerarRamal();
+		Cole->SetRamal(aux);
+	}
+	else
+	{	//llamamos a la funcion GenerarRamal hasta que nos genere un ramal cuya parada inicial 
 		//sea igual a la parada final de nuestro ramal actual
 		do
 		{
-			Ramal* aux = GenerarRamal();
-			C->SetRamal(aux);
+			aux = GenerarRamal();
+			
+		} while (Cole->GetRamal()->GetFinal() != aux->GetCod()); 
 
-		} while (C->GetRamal()->GetFinal()!=aux->GetCod()); 
+		Cole->SetRamal(aux);
 	}
-
-	
-	delete aux; //ver que puede tirar error
 }
 
 string InfoDia(cListaT<Colectivo>* Lista)

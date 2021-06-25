@@ -2,6 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Enum.h"
 #include "Parada.h"
+
 using namespace std;
 
 class Pasajero

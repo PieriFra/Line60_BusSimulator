@@ -2,8 +2,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Colectivo.h"
 using namespace std;
-class Ramal;
-
 
 class Nuevo: public Colectivo
 {

@@ -16,6 +16,7 @@ protected:
 	unsigned int pasajeros_totales;
 	eDireccion direccion; //direccion hidraulica (1), direccion electrica (2)
 	bool puerta;//sera true si la puerta esta abierta
+	int parada;
 	float monto_total; //va guardando el monto juntado por dia
 	float peso_max; //peso maximo de pasajeros permitida
 	float peso_actual;//peso actual del colectivo
@@ -41,8 +42,8 @@ public:
 	
 	void ColectivoRoto(cListaT<Colectivo>*Lista, Colectivo *colec_roto);
 	
-
-	string SistemaGPS(); //retorna cada cinco minutos el nombre de la parada en la que se encuentra el colectivo
+	void SetParada(int i) { parada = i; }
+	int GetParada() { return parada; }
 
 	void SetEstado(bool Estado) { Estado = EstadoFunicionamiento; }
 	void SetRamal(Ramal* R) { ramal = R; }
