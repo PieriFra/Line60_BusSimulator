@@ -176,7 +176,7 @@ void Colectivo::ColectivoRoto(cListaT<Colectivo>* Lista, Colectivo* colec_roto)
                 for (int i = 0; i < Lista->getItem(i)->ListaPasajerosCole->getCA(); i++)
                 {
                     //nos copiamos los pasajeros del colectivo sano a la lista aux
-                    aux[i] = Lista->getItem(i)->ListaPasajerosCole[i]
+                    aux[i] = Lista->getItem(i)->ListaPasajerosCole[i];
                 }
                 for (int i = aux->getCA(); i < aux->getTAM(); i++)
                 {

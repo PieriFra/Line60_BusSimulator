@@ -97,9 +97,9 @@ int main()
 
 
 	//ver liberar memoria
-	delete nuevo;
+	/*delete nuevo;
 	delete viejo;
-	delete acordeon;
+	delete acordeon;*/
 
 	return 0;
 }
