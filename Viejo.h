@@ -1,6 +1,6 @@
 #pragma once
-#include "Colectivo.h"
 #define _CRT_SECURE_NO_WARNINGS
+#include "Colectivo.h"
 #include <string>
 #include <iostream>
 #include <ctime>

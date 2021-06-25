@@ -1,5 +1,7 @@
 #include "Nuevo.h"
 #define Extra 10
+
+
 Nuevo::Nuevo(string codigo_colec, unsigned int cant_max_pas, eDireccion direccion,
 	float peso_max):Colectivo(codigo_colec,cant_max_pas,direccion,peso_max)
 {
@@ -28,7 +30,7 @@ float Nuevo::CalcularTarifa(int parada_inicial, int parada_final)
 	return 0.0f;
 }
 
-string Nuevo::To_String()
+/*string Nuevo::To_String()
 {
 	stringstream sn;
 	sn << "Colectivo: Codigo " << codigo_colec << endl;
@@ -41,4 +43,4 @@ string Nuevo::To_String()
 void Nuevo::Imprimir()
 {
 	cout << To_String() << endl;
-}
+}*/
