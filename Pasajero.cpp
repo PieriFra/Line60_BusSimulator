@@ -16,7 +16,6 @@ Pasajero::~Pasajero() {};
 
 void Pasajero::Pagar(float monto)
 {	
-	//ver aca!
 	if (dinero > monto)
 		dinero = dinero - monto;
 	else

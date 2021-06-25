@@ -6,8 +6,7 @@ Acordeon::Acordeon(string codigo_colec, unsigned int cant_max_pas, eDireccion di
 	this->cant_ruedas = 8;
 }
 
-Acordeon::~Acordeon()
-{}
+Acordeon::~Acordeon(){}
 
 
 

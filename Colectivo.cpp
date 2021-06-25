@@ -60,6 +60,7 @@ void Colectivo::SubirPasajero(Ramal *R)
                         catch (exception* e){
                             cout << e->what() << endl;
                         }
+
                         this->cant_pasajeros = cant_pasajeros + 1;
                         this->pasajeros_totales = pasajeros_totales + 1;
                     }
@@ -133,8 +134,8 @@ void Colectivo::BajarPasajero(Ramal* R)
                     ListaPasajerosCole->EliminarPorItem(ListaPasajerosCole->getItem(i));
                 }
                 catch (exception* e) {
-                    throw e;
-                    //cout << e->what() << endl;
+                  
+                  cout << e->what() << endl;
                 }
                 this->cant_pasajeros = cant_pasajeros - 1;
             }
@@ -162,7 +163,6 @@ void Colectivo::ColectivoRoto(cListaT<Colectivo>* Lista, Colectivo* colec_roto)
 {
     for (int i = 0; i < Lista->getCA(); i++)
     {
-        
         if (Lista->getItem(i)->EstadoFunicionamiento == true && colec_roto->EstadoFunicionamiento == false)
         {
             //preguntamos que tenga lugar para recibir los pasajeros del colectivo roto

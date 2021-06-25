@@ -103,6 +103,9 @@ int main()
 
 	viejo->SetEstado(false);
 	viejo->ColectivoRoto(ListaColectivos, viejo);
+
+
+
 	//imprimimos monto total de cada colectivo, cantidad de pasajeros que se suben y el total de todos los colectivos
 	string info = InfoDia(ListaColectivos);
 	cout << info << endl;
@@ -120,7 +123,7 @@ int main()
 
 
 	//ver liberar memoria
-	ListaColectivos->~cListaT();
+	//ListaColectivos->~cListaT();
 
 	return 0;
 }

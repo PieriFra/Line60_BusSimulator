@@ -112,7 +112,6 @@ void AsignarRamal(Colectivo* Cole)
 			aux = GenerarRamal();
 			
 		} while (Cole->GetRamal()->GetFinal() != aux->GetCod()); 
-
 		Cole->SetRamal(aux);
 	}
 }

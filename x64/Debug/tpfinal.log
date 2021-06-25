@@ -1,19 +1,31 @@
-﻿  Funciones.cpp
+﻿  Acordeon.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(11,20): warning C4091: 'typedef ': ignored on left of 'eRamal' when no variable is declared
+C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(14,24): warning C4091: 'typedef ': ignored on left of 'eDireccion' when no variable is declared
+  Colectivo.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(11,20): warning C4091: 'typedef ': ignored on left of 'eRamal' when no variable is declared
+C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(14,24): warning C4091: 'typedef ': ignored on left of 'eDireccion' when no variable is declared
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(164,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(173,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usuario\Desktop\TP Final-GIT\Colectivo.cpp(178,46): warning C4018: '<': signed/unsigned mismatch
+  Funciones.cpp
 C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(11,20): warning C4091: 'typedef ': ignored on left of 'eRamal' when no variable is declared
 C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(14,24): warning C4091: 'typedef ': ignored on left of 'eDireccion' when no variable is declared
 C:\Users\Usuario\Desktop\TP Final-GIT\Funciones.cpp(16,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Usuario\Desktop\TP Final-GIT\Funciones.cpp(24,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Usuario\Desktop\TP Final-GIT\Funciones.cpp(43,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Usuario\Desktop\TP Final-GIT\Funciones.cpp(74,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Usuario\Desktop\TP Final-GIT\Funciones.cpp(128,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Usuario\Desktop\TP Final-GIT\Funciones.cpp(139,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usuario\Desktop\TP Final-GIT\Funciones.cpp(127,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usuario\Desktop\TP Final-GIT\Funciones.cpp(138,20): warning C4018: '<': signed/unsigned mismatch
+  Pasajero.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(11,20): warning C4091: 'typedef ': ignored on left of 'eRamal' when no variable is declared
+C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(14,24): warning C4091: 'typedef ': ignored on left of 'eDireccion' when no variable is declared
+  Viejo.cpp
+C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(11,20): warning C4091: 'typedef ': ignored on left of 'eRamal' when no variable is declared
+C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(14,24): warning C4091: 'typedef ': ignored on left of 'eDireccion' when no variable is declared
   main.cpp
 C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(11,20): warning C4091: 'typedef ': ignored on left of 'eRamal' when no variable is declared
 C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(14,24): warning C4091: 'typedef ': ignored on left of 'eDireccion' when no variable is declared
 C:\Users\Usuario\Desktop\TP Final-GIT\main.cpp(72,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Usuario\Desktop\TP Final-GIT\main.cpp(110,20): warning C4018: '<': signed/unsigned mismatch
-  Nuevo.cpp
-C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(11,20): warning C4091: 'typedef ': ignored on left of 'eRamal' when no variable is declared
-C:\Users\Usuario\Desktop\TP Final-GIT\Enum.h(14,24): warning C4091: 'typedef ': ignored on left of 'eDireccion' when no variable is declared
+C:\Users\Usuario\Desktop\TP Final-GIT\main.cpp(113,20): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
   tpfinal.vcxproj -> C:\Users\Usuario\Desktop\TP Final-GIT\x64\Debug\tpfinal.exe

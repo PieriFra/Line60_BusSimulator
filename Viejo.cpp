@@ -19,6 +19,5 @@ float Viejo::CalcularTarifa(int parada_inicial, int parada_final)
 	float TarifaTot = tarifa + (abs(diff) * Extra);
 
 	return TarifaTot;
-	return 0.0f;
 }
 
