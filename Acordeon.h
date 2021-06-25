@@ -1,10 +1,5 @@
-#define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include "Nuevo.h"
-#include <string>
-#include <iostream>
-#include <ctime>
-#include "Definiciones.h"
 using namespace std;
 class Ramal;
 

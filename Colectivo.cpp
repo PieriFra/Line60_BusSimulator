@@ -1,9 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Colectivo.h"
-#include "Parada.h"
-#include "Ramal.h"
-#include "Funciones.h"
-#include <stdlib.h>
 #define Tarifa 15
 
 

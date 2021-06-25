@@ -1,9 +1,9 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
-#include <string>
-#include <iostream>
-#include <ctime>
+#include "Enum.h"
+
 using namespace std;
+
 class Pasajero;
 template<class Pasajero>class cListaT;
 

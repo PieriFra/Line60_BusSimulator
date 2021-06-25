@@ -143,6 +143,7 @@
     <ClInclude Include="Colectivo.h" />
     <ClInclude Include="Definiciones.h" />
     <ClInclude Include="cListaT.h" />
+    <ClInclude Include="Enum.h" />
     <ClInclude Include="Funciones.h" />
     <ClInclude Include="Nuevo.h" />
     <ClInclude Include="Parada.h" />

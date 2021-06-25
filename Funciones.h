@@ -1,6 +1,8 @@
 #pragma once
-#include "Definiciones.h"
-
+#include "Enum.h"
+#include "Parada.h"
+#include "Ramal.h"
+#include "Colectivo.h"
 
 cListaT<Parada> *CargarLista(cListaT<Parada>* Lista);
 Ramal* GenerarRamal();

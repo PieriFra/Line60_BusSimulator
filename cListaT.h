@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #define NMAX 20
 #include <string>
 using namespace std;

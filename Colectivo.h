@@ -1,13 +1,11 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
-#include <string>
-#include <iostream>
-#include <ctime>
-#include "Definiciones.h"
+#include "Enum.h"
+#include "Pasajero.h"
+#include "Parada.h"
+#include "Ramal.h"
+#include "Funciones.h"
 using namespace std;
-class Pasajero;
-class Ramal;
-class Parada;
 
 class Colectivo
 {
@@ -25,6 +23,7 @@ protected:
 	bool EstadoFunicionamiento; //true si esta sano, false si esta roto
 	Ramal* ramal; //puntero al ramal correspondiente que tiene su lista de paradas
 	//static int counter; //cuenta la cantidad de colectivos
+
 	cListaT<Pasajero>* ListaPasajerosCole;
 
 public:
@@ -52,7 +51,7 @@ public:
 	unsigned int GetCantMax() { return cant_max_pas; }
 	unsigned int GetCantActual() { return cant_pasajeros; }
 	float GetMonto() { return monto_total; }
-	const string GetCodigo() { return codigo_colec; }
+	const string GetClave() { return codigo_colec; }
 	bool GetEstado() { return EstadoFunicionamiento; }
 	unsigned int GetPasajerosTot() { return pasajeros_totales; }
 

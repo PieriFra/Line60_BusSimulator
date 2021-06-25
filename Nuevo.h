@@ -1,11 +1,9 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include "Colectivo.h"
-#include <string>
-#include <iostream>
-#include <ctime>
 using namespace std;
 class Ramal;
+
 
 class Nuevo: public Colectivo
 {

@@ -1,6 +1,7 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
-#include "Definiciones.h"
+#include "Enum.h"
+
 class Parada;
 template<class Parada>class cListaT;
 

@@ -2,19 +2,17 @@
 #include <stdlib.h>
 #define Dinero 500
 
-Pasajero::Pasajero(int parada_final, int parada_inicial, int nro_boleto, bool discapacidad) :nro_boleto(contador++)
+Pasajero::Pasajero(int parada_final, int parada_inicial, string nro_boleto, bool discapacidad) : nro_boleto(nro_boleto)
 {
 	dinero = Dinero;
 	this->parada_inicial = parada_inicial;
 	this->discapacidad = discapacidad;
 	peso = 65;
 	this->parada_final = parada_final;
-	//this->nro_boleto = nro_boleto;
 
 }
+Pasajero::~Pasajero() {};
 
-Pasajero::~Pasajero(){}
-int Pasajero::contador = 0;
 
 void Pasajero::Pagar(float monto)
 {	

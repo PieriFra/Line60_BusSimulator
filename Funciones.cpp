@@ -1,9 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include "Funciones.h"
-#include <sstream>
-#include <stdlib.h>
-#include <ctime>
+
 
 cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 {
@@ -30,7 +28,8 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 					parada_inicial = 1 + (rand() % (13 - 1));
 				} while (parada_final==parada_inicial);
 				
-				Pasajero* pasajero_discapacitado = new Pasajero(parada_final,parada_inicial,pasajero_discapacitado->GetNroBoleto(), true);
+				int boleto = 1+(rand() % (256 - 9));
+				Pasajero* pasajero_discapacitado = new Pasajero(parada_final,parada_inicial, to_string(boleto), true);
 				try {
 					ListaPasajeros->AgregarItem(pasajero_discapacitado);
 				}
@@ -47,7 +46,9 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 					parada_final = 1 + (rand() % (13 - 1));
 					parada_inicial = 1 + (rand() % (13 - 1));
 				} while (parada_final == parada_inicial);
-				Pasajero* pasajero = new Pasajero(parada_final, parada_inicial, pasajero->GetNroBoleto(), true);
+
+				int boleto = 1 + (rand() % (256 - 9));
+				Pasajero* pasajero = new Pasajero(parada_final, parada_inicial, to_string(boleto), true);
 
 				try {
 					ListaPasajeros->AgregarItem(pasajero);
@@ -61,6 +62,8 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 		Parada* parada = new Parada(i++, DireParadas[i], NomParada[i], ListaPasajeros);
 		aux->operator+(parada);
 	}
+
+	return aux;
 }
 Ramal* GenerarRamal()
 {
@@ -135,7 +138,7 @@ string InfoDia(cListaT<Colectivo>* Lista)
 	//recorremos la lista de colectivos
 	for (int i = 0; i < Lista->getCA(); i++)
 	{
-		Datos << "Colectivo:" << Lista->getItem(i)->GetCodigo() << endl
+		Datos << "Colectivo:" << Lista->getItem(i)->GetClave() << endl
 			<< "Ramal: " << Lista->getItem(i)->GetRamal()->GetNom() << "Total Pasajeros: " <<
 			Lista->getItem(i)->GetPasajerosTot() << endl
 			<< "Total Recaudado: " << Lista->getItem(i)->GetMonto() << endl;

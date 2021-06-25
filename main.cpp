@@ -85,7 +85,7 @@ int main()
 		//llamamos al metodo gps
 		nom = ListaColectivos->getItem(i)->SistemaGPS(); 
 		//impirimimos por codigo de colectivo la parada en la que se encuentra
-		cout << "El colectivo " << ListaColectivos->getItem(i)->GetCodigo()
+		cout << "El colectivo " << ListaColectivos->getItem(i)->GetClave()
 			<< "se encuentra en la parada: " << nom;
 	}
 
@@ -97,9 +97,9 @@ int main()
 
 
 	//ver liberar memoria
-	/*delete nuevo;
+	delete nuevo;
 	delete viejo;
-	delete acordeon;*/
+	delete acordeon;
 
 	return 0;
 }
