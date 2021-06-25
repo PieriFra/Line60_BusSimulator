@@ -33,7 +33,7 @@ public:
 		float peso_max);
 	~Colectivo();
 
-	float CalcularTarifa(int parada_inicial, int parada_final);
+	virtual float CalcularTarifa(int parada_inicial, int parada_final)=0;
 	
 	void SubirPasajero(Ramal *R);
 	void Cobrar(Pasajero* P, float monto);

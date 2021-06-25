@@ -14,6 +14,8 @@ public:
 		float peso_max);
 	~Viejo();
 
+	float CalcularTarifa(int parada_inicial, int parada_final);
+
 	string To_String();
 	void Imprimir();
 

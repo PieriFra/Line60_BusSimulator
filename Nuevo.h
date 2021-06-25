@@ -19,11 +19,11 @@ public:
 	~Nuevo();
 
 	void PrenderApagarAire(bool Estado);
+	float CalcularTarifa(int parada_inicial, int parada_final);
 
 	bool GetAire() { return aire; }
 
-	string To_String();
-	void Imprimir();
+	
 
 };
 

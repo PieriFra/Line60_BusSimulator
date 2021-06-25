@@ -5,8 +5,6 @@
 #include "Funciones.h"
 #include <stdlib.h>
 #define Tarifa 15
-#define Extra 5
-
 
 
 Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, eDireccion direccion, 
@@ -29,17 +27,6 @@ Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, eDireccion 
 Colectivo::~Colectivo()
 {
     delete ListaPasajerosCole;
-}
-
-float Colectivo::CalcularTarifa(int parada_inicial, int parada_final)
-{
-    //dependiendo la cantida de paradas entre la parada incial y la final, le sumamos un extra a la tarifa base.
-    //cada para recorrida equivale a $5
-
-    int diff = parada_final- parada_inicial;
-    float TarifaTot = tarifa + (abs(diff) * Extra);
-
-    return TarifaTot;
 }
 
 void Colectivo::SubirPasajero(Ramal *R)
