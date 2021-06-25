@@ -8,6 +8,7 @@
 #define Extra 5
 
 
+
 Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, eDireccion direccion, 
     float peso_max): codigo_colec(codigo_colec)
 {
@@ -22,7 +23,7 @@ Colectivo::Colectivo(string codigo_colec, unsigned int cant_max_pas, eDireccion 
     this->direccion = direccion;
     this->peso_max = peso_max;
     ramal = NULL;
-    ListaPasajerosCole = new cListaT<Pasajero>();
+    ListaPasajerosCole = new cListaT<Pasajero>(cant_max_pas);
 }
 
 Colectivo::~Colectivo()
@@ -173,19 +174,39 @@ bool Colectivo::VerificarPesoCant()
         return true;//hay lugar para que suban mas pasajeros y no superan la capacidad de peso
 }
 
-void Colectivo::ColectivoRoto(Colectivo* colec_sano, Colectivo* colec_roto)
+void Colectivo::ColectivoRoto(cListaT<Colectivo>* Lista, Colectivo* colec_roto)
 {
-    //preguntamos que tenga lugar para recibir los pasajeros del colectivo roto
-    if (colec_sano->GetCantMax() - colec_sano->GetCantActual() > colec_roto->GetCantActual())
+    for (int i = 0; i < Lista->getCA(); i++)
     {
-        colec_sano = colec_roto; //ver aca!
-        colec_sano->EstadoFunicionamiento = true;
-        AsignarRamal(colec_sano);
-    }
-    else
-        throw new exception("El colectivo auxiliar no posee lugar!");
+        
+        if (Lista->getItem(i)->EstadoFunicionamiento == true && colec_roto->EstadoFunicionamiento == false)
+        {
+            //preguntamos que tenga lugar para recibir los pasajeros del colectivo roto
+            if (Lista->getItem(i)->GetCantMax() - Lista->getItem(i)->GetCantActual() > colec_roto->GetCantActual())
+            {
+                //colec_sano = colec_roto; //ver aca!
+                cListaT<Pasajero>* aux = new cListaT<Pasajero>(Lista->getItem(i)->cant_max_pas);
+                for (int i = 0; i < Lista->getItem(i)->ListaPasajerosCole->getCA(); i++)
+                {
+                    //nos copiamos los pasajeros del colectivo sano a la lista aux
+                    aux[i] = Lista->getItem(i)->ListaPasajerosCole[i]
+                }
+                for (int i = aux->getCA(); i < aux->getTAM(); i++)
+                {
+                    //nos copiamos los pasajeros del colectivo roto a la lista aux, justo despues de los pasajeros del colectivo sano.
+                    aux[i] = colec_roto->ListaPasajerosCole[i];
+                }
+                //vaciamos la lista de pasajeros del colectivo sano (no la eliminamos)
+                delete[] Lista->getItem(i)->ListaPasajerosCole;
+                //nos copiamos la lista auxiliar a nuestra lista original vacia
+                Lista->getItem(i)->ListaPasajerosCole = aux;
 
-    //deberiamos llamar a otro colectivo hasta que uno rescate al colectivo roto?
+                //-----------------TALLLER-----------------//
+                colec_roto->EstadoFunicionamiento = true;
+                AsignarRamal(colec_roto);
+            }
+        }
+    }
 }
 
 string Colectivo::SistemaGPS()

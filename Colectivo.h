@@ -40,7 +40,7 @@ public:
 	void BajarPasajero(Ramal* R);
 	bool VerificarPesoCant(); //verifica que el peso y la cantidad de pasajeros sea la permitida
 	
-	void ColectivoRoto(Colectivo *colec_sano, Colectivo *colec_roto);
+	void ColectivoRoto(cListaT<Colectivo>*Lista, Colectivo *colec_roto);
 	
 
 	string SistemaGPS(); //retorna cada cinco minutos el nombre de la parada en la que se encuentra el colectivo
