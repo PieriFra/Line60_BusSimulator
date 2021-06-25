@@ -16,8 +16,5 @@ public:
 
 	float CalcularTarifa(int parada_inicial, int parada_final);
 
-	string To_String();
-	void Imprimir();
-
 };
 

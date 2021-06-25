@@ -21,17 +21,4 @@ float Viejo::CalcularTarifa(int parada_inicial, int parada_final)
 	return TarifaTot;
 	return 0.0f;
 }
-string Viejo::To_String()
-{
-	stringstream sv;
-	sv << "Colectivo: Codigo " << codigo_colec << endl;
-	sv << "Cantidad de pasajeros: " << cant_pasajeros << endl;
-	sv << "Peso actual: " << peso_actual << endl;
 
-	return sv.str();
-}
-
-void Viejo::Imprimir()
-{
-	cout << To_String() << endl;
-}

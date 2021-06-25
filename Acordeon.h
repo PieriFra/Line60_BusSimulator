@@ -21,8 +21,5 @@ public:
 	bool GetAire() { return aire; }
 	int GetRuedas() const { return cant_ruedas; }
 	
-	friend ostream& operator<<(ostream& os, const Acordeon& A);
-	/*string To_String();
-	void Imprimir();*/
 };
 

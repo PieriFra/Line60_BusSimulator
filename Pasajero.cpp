@@ -1,6 +1,7 @@
 #include "Pasajero.h"
 #include <stdlib.h>
 #define Dinero 500
+
 Pasajero::Pasajero(int parada_final, int parada_inicial, int nro_boleto, bool discapacidad) :nro_boleto(contador++)
 {
 	dinero = Dinero;
@@ -13,9 +14,7 @@ Pasajero::Pasajero(int parada_final, int parada_inicial, int nro_boleto, bool di
 }
 
 Pasajero::~Pasajero(){}
-
 int Pasajero::contador = 0;
-
 
 void Pasajero::Pagar(float monto)
 {	
@@ -26,17 +25,14 @@ void Pasajero::Pagar(float monto)
 		throw new exception("El pasajero no posee el dinero suficiente.");
 }
 
-string Pasajero::To_String()
+ostream& Pasajero::operator<<(ostream& os)
 {
-	//ver
-	stringstream sp;
+	os << "Parada inicial: " << parada_inicial << endl;
+	os << "Parada final: " << parada_final << endl << "Numero de Boleto: " << nro_boleto << endl;
 
-	sp << "Parada inicial: " << parada_inicial<< endl;
-	sp << "Parada final: " << parada_final << endl;
-	return sp.str();
+	return os;
 }
 
-void Pasajero::Imprimir()
-{
-	cout << To_String() << endl;
-}
+
+
+

@@ -16,14 +16,14 @@ public:
 	Ramal(cListaT<Parada>* ListaParadas);
 	~Ramal();
 
+	ostream& operator<<(ostream& os);
+
 	int GetCod() { return codigo_parada; }
 	int GetFinal() { return codigo_final; }
 	eRamal GetNom() { return nombre; }
 	void SetNom(eRamal nom) { nom = nombre; }
 	void SetCod(int cod) { cod = codigo_parada; }
 
-	/*string To_String();
-	void Imprimir();*/
 
 };
 

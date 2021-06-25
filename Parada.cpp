@@ -12,17 +12,12 @@ Parada::~Parada()
 {
 }
 
-string Parada::To_String()
+ostream& Parada::operator<<(ostream& os)
 {
-	stringstream spa;
+	os << "Parada: " << nombre_parada << endl <<"Codigo: "<<codigo_parada<<endl
+		<< "Direccion: " << direccion << endl;
 
-	spa << "Parada: " << nombre_parada << endl;
-	spa << "Direccion: " << direccion << endl;
-
-	return spa.str();
+	return os;
 }
 
-void Parada::Imprimir()
-{
-	cout << To_String() << endl;
-}
+

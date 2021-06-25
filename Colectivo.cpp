@@ -205,16 +205,9 @@ string Colectivo::SistemaGPS()
 ostream& Colectivo::operator<<(ostream& os)
 {
     os << "Colectivo:"<<endl<< "Codigo " << codigo_colec << endl;
-    os << "Cantidad de pasajeros: " << cant_pasajeros << endl;
-    os << "Peso actual: " << peso_actual << endl;
+    os << "Cantidad Maxima de pasajeros: " << cant_max_pas<< endl;
+    os << "Tarifa: " << tarifa << endl;
     os << "Ramal: " << ramal << endl;
 
     return os;
 }
-
-/* Imprimir es virtual, la implementamos en las clases hijas
-void Colectivo::Imprimir()
-{
-    cout << To_String() << endl;
-}
-*/

@@ -26,6 +26,8 @@ public:
 
 	void Pagar(float monto);
 
+	ostream& operator<<(ostream& os);
+
 	int GetParadaInicial() { return parada_inicial; }
 	int GetParadaFinal() { return parada_final; }
 	void SetParadIncio(int CodParada) { CodParada = parada_inicial; }
@@ -34,9 +36,5 @@ public:
 	bool GetDisc() { return discapacidad; }
 
 	int GetNroBoleto() { return nro_boleto; }
-	string To_String();
-	void Imprimir();
-
-
 };
 

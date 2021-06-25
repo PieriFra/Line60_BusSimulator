@@ -9,20 +9,15 @@ Ramal::Ramal(cListaT<Parada>* ListaParadas)
 }
 
 Ramal::~Ramal()
+{}
+
+ostream& Ramal::operator<<(ostream& os)
 {
-	//tenemos que eliminar la lista de paradas???
+	os << "Ramal: " << nombre << endl << "Codigo Parada Incio: " << codigo_parada << endl << "Codigo Parada Fin: "
+		<< codigo_final << endl;
+
+	return os;
 }
 
-string Ramal::To_String()
-{
-	stringstream sr;
 
-	sr << "Ramal: " << nombre << endl;
 
-	return sr.str();
-}
-
-void Ramal::Imprimir()
-{
-	cout << To_String() << endl;
-}

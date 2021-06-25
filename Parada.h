@@ -19,10 +19,10 @@ public:
 	Parada(int codigo_parada, string nombre_parada, string direccion, cListaT<Pasajero>* ListaPasajeros);
 	~Parada();
 
+	ostream& operator<<(ostream& os);
+
 	friend class Colectivo;
 
 	int GetCodigoParada() { return codigo_parada; }
-	string To_String();
-	void Imprimir();
 };
 

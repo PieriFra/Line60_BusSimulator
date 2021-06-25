@@ -30,17 +30,4 @@ float Nuevo::CalcularTarifa(int parada_inicial, int parada_final)
 	return 0.0f;
 }
 
-/*string Nuevo::To_String()
-{
-	stringstream sn;
-	sn << "Colectivo: Codigo " << codigo_colec << endl;
-	sn << "Cantidad de pasajeros: " << cant_pasajeros << endl;
-	sn << "Peso actual: " << peso_actual << endl;
 
-	return sn.str();
-}
-
-void Nuevo::Imprimir()
-{
-	cout << To_String() << endl;
-}*/
