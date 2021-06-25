@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Colectivo.h"
 #include "Parada.h"
 #include "Ramal.h"
@@ -71,7 +72,7 @@ void Colectivo::SubirPasajero(Ramal *R)
                         try {
                             R->ListaParadas->getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
                         }
-                        catch (exception* e) {
+                        catch (exception* e){
                             cout << e->what() << endl;
                         }
                         this->cant_pasajeros = cant_pasajeros + 1;
@@ -85,7 +86,6 @@ void Colectivo::SubirPasajero(Ramal *R)
                     {
                         float tarifa = CalcularTarifa(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetParadaInicial(),
                             R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetParadaFinal());
-
                         Cobrar(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i), tarifa);
 
                         try {
@@ -148,7 +148,8 @@ void Colectivo::BajarPasajero(Ramal* R)
                     ListaPasajerosCole->EliminarPorItem(ListaPasajerosCole->getItem(i));
                 }
                 catch (exception* e) {
-                    cout << e->what() << endl;
+                    throw e;
+                    //cout << e->what() << endl;
                 }
                 this->cant_pasajeros = cant_pasajeros - 1;
             }
@@ -193,14 +194,14 @@ string Colectivo::SistemaGPS()
     return string();
 }
 
-string Colectivo::To_String()
+ostream& Colectivo::operator<<(ostream& os)
 {
-    stringstream sc;
-    sc << "Colectivo: Codigo " << codigo_colec << endl;
-    sc << "Cantidad de pasajeros: " << cant_pasajeros << endl;
-    sc << "Peso actual: " << peso_actual << endl;
+    os << "Colectivo: Codigo " << codigo_colec << endl;
+    os << "Cantidad de pasajeros: " << cant_pasajeros << endl;
+    os << "Peso actual: " << peso_actual << endl;
 
-    return sc.str();
+    return os;
+    // TODO: insert return statement here
 }
 
 /* Imprimir es virtual, la implementamos en las clases hijas

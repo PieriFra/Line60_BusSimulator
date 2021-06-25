@@ -54,15 +54,10 @@ public:
 	const string GetCodigo() { return codigo_colec; }
 	bool GetEstado() { return EstadoFunicionamiento; }
 	unsigned int GetPasajerosTot() { return pasajeros_totales; }
-	
-	//verrrr
-	ostream& operator<<(ostream& os)
-	{
-		os << To_String() << endl;
-		return os;
-	}
 
-	string To_String();
-	virtual void Imprimir()=0;
+	ostream& operator<<(ostream& os);
+
+	/*string To_String();
+	virtual void Imprimir()=0;*/
 };
 

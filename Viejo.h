@@ -10,7 +10,7 @@ class Ramal;
 class Viejo : public Colectivo
 {
 public:
-	Viejo(const string codigo_colec, unsigned int cant_max_pas, unsigned int direccion,
+	Viejo(const string codigo_colec, unsigned int cant_max_pas, eDireccion direccion,
 		float peso_max);
 	~Viejo();
 
