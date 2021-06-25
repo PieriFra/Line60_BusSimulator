@@ -7,10 +7,8 @@
 #include <sstream>
 #include "cListaT.h"
 
-enum eRamal { RamalA = 0, RamalB, RamalC, RamalD };
+enum eRamal { RamalA, RamalB, RamalC, RamalD };
 typedef enum eRamal;
 
-enum eDireccion
-{
-	Hidraulica = 0, Electrica
-}; typedef enum eDireccion;
+enum eDireccion { Hidraulica, Electrica };
+typedef enum eDireccion;

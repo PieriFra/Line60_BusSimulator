@@ -23,8 +23,6 @@ protected:
 	float tarifa; //valor fijo de la tarifa
 	bool EstadoFunicionamiento; //true si esta sano, false si esta roto
 	Ramal* ramal; //puntero al ramal correspondiente que tiene su lista de paradas
-	//static int counter; //cuenta la cantidad de colectivos
-
 	cListaT<Pasajero>* ListaPasajerosCole;
 
 public:
@@ -44,7 +42,8 @@ public:
 	
 	void SetParada(int i) { parada = i; }
 	int GetParada() { return parada; }
-
+	float GetTarifa() { return tarifa; }
+	void SetTarifa(float tarifa) { this->tarifa = tarifa; }
 	void SetEstado(bool Estado) { Estado = EstadoFunicionamiento; }
 	void SetRamal(Ramal* R) { ramal = R; }
 	void SetPuerta(bool puerta) { this->puerta = puerta; }
@@ -55,10 +54,10 @@ public:
 	const string GetClave() { return codigo_colec; }
 	bool GetEstado() { return EstadoFunicionamiento; }
 	unsigned int GetPasajerosTot() { return pasajeros_totales; }
-
-	ostream& operator<<(ostream& os);
-
-	/*string To_String();
-	virtual void Imprimir()=0;*/
+	cListaT<Pasajero>* GetLista() { return ListaPasajerosCole; }
+	
+	friend ostream& operator<<(ostream& os, Colectivo&Cole);
+	
 };
 
+istream& operator>>(istream& in, Colectivo& Cole);

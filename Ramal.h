@@ -11,14 +11,17 @@ private:
 	eRamal nombre;
 	int codigo_parada;
 	int codigo_final;
-public:
-	static cListaT<Parada>* ListaParadas;
+	static cListaT<Parada> ListaParadas;
 
-	Ramal(cListaT<Parada>* ListaParadas);
+public:
+
+	Ramal(cListaT<Parada> ListaParadas);
 	~Ramal();
 
-	ostream& operator<<(ostream& os);
+	friend class Colectivo;
 
+	ostream& operator<<(ostream& os);
+	static cListaT<Parada>& GetLista() { return ListaParadas; }
 	int GetCod() { return codigo_parada; }
 	int GetFinal() { return codigo_final; }
 	eRamal GetNom() { return nombre; }

@@ -38,13 +38,13 @@ void Colectivo::SubirPasajero(Ramal *R)
             if (VerificarPesoCant()==true) 
             {
                 //subimos primero los pasajeros con discapacidad
-                if (i == R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetParadaInicial() &&
-                    R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetDisc() == true)
+                if (i == R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i)->GetParadaInicial() &&
+                    R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i)->GetDisc() == true)
                 {
                     if (cant_pasajeros < cant_max_pas) // hay lugar en el colectivo?
                     {
                         try {
-                            ListaPasajerosCole->AgregarItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
+                            ListaPasajerosCole->AgregarItem(R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i));
                         }
                         catch (exception* e)
                         {
@@ -55,7 +55,7 @@ void Colectivo::SubirPasajero(Ramal *R)
                         
                         //ver de manejar la excepcion de eliminar item
                         try {
-                            R->ListaParadas->getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
+                            R->ListaParadas.getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i));
                         }
                         catch (exception* e){
                             cout << e->what() << endl;
@@ -64,17 +64,17 @@ void Colectivo::SubirPasajero(Ramal *R)
                         this->pasajeros_totales = pasajeros_totales + 1;
                     }
                 }
-                if (i == R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetParadaInicial() &&
-                    R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetDisc() == false)
+                if (i == R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i)->GetParadaInicial() &&
+                    R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i)->GetDisc() == false)
                 {
                     if (cant_pasajeros < cant_max_pas) // hay lugar en el colectivo?
                     {
-                        float tarifa = CalcularTarifa(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetParadaInicial(),
-                            R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i)->GetParadaFinal());
-                        Cobrar(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i), tarifa);
+                        float tarifa = CalcularTarifa(R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i)->GetParadaInicial(),
+                            R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i)->GetParadaFinal());
+                        Cobrar(R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i), tarifa);
 
                         try {
-                            ListaPasajerosCole->AgregarItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
+                            ListaPasajerosCole->AgregarItem(R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i));
                         }
                         catch (exception* e)
                         {
@@ -85,7 +85,7 @@ void Colectivo::SubirPasajero(Ramal *R)
                         
                         //manejar excepcion
                         try {
-                            R->ListaParadas->getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas->getItem(i)->ListaPasajeros->getItem(i));
+                            R->ListaParadas.getItem(i)->ListaPasajeros->EliminarPorItem(R->ListaParadas.getItem(i)->ListaPasajeros->getItem(i));
                         }
                         catch (exception* e) {
                             cout << e->what() << endl;
@@ -193,12 +193,24 @@ void Colectivo::ColectivoRoto(cListaT<Colectivo>* Lista, Colectivo* colec_roto)
     }
 }
 
-ostream& Colectivo::operator<<(ostream& os)
-{
-    os << "Colectivo:"<<endl<< "Codigo " << codigo_colec << endl;
-    os << "Cantidad Maxima de pasajeros: " << cant_max_pas<< endl;
-    os << "Tarifa: " << tarifa << endl;
-    os << "Ramal: " << ramal << endl;
+ ostream& operator<<(ostream& os, Colectivo& Cole)
+ {
+     os << "Colectivo:" << endl << "Codigo " << Cole.GetClave()<< endl;
+     os << "Cantidad Maxima de pasajeros: " << Cole.GetCantMax() << endl;
+     os << "Tarifa: " << Cole.GetTarifa() << endl;
+  
+     return os;
+ }
 
-    return os;
-}
+ istream& operator>>(istream& in, Colectivo& Cole)
+ {
+     cout << "Ingrese el valor de la nueva Tarifa: ";
+     float aux;
+     in >> aux;
+
+     aux += Cole.GetTarifa();
+     Cole.SetTarifa(aux);
+
+     return in;
+ }
+

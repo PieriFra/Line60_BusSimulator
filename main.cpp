@@ -50,7 +50,7 @@ int main()
 			if (i % 5 == 0) //cada 5 min actualizamos la poscion 
 			{
 				int pos = ListaColectivos->getItem(i)->GetParada();
-				string nombre=ListaColectivos->getItem(i)->GetRamal()->ListaParadas->getItem(pos)->GetNombre();
+				string nombre=ListaColectivos->getItem(i)->GetRamal()->GetLista().getItem(pos)->GetNombre();
 				cout << "Colectivo: " << ListaColectivos->getItem(i)->GetClave()
 					<< "se encuentra en la parada: " << nombre << endl;
 			}
@@ -69,7 +69,7 @@ int main()
 
 			//recorremos la lista de paradas de cada colectivo
 			int incio = ListaColectivos->getItem(i)->GetRamal()->GetCod();
-			for (int i = incio; i < ListaColectivos->getItem(i)->GetRamal()->ListaParadas->getCA() - incio; i++)
+			for (int i = incio; i < ListaColectivos->getItem(i)->GetRamal()->GetLista().getCA() - incio; i++)
 			{
 				//vamos actualizando la parada actual en la que se encuentra 
 				ListaColectivos->getItem(i)->SetParada(i);
@@ -95,10 +95,7 @@ int main()
 			}
 
 			//cuando el colectivo termina su recorrido, le asignamos un nuevo ramal de manera dinamica	
-			AsignarRamal(ListaColectivos->getItem(i));
-
-		
-			
+			AsignarRamal(ListaColectivos->getItem(i));	
 		}
 
 	}
@@ -110,12 +107,20 @@ int main()
 	string info = InfoDia(ListaColectivos);
 	cout << info << endl;
 
+	for (int i = 0; i < ListaColectivos->getCA(); i++)
+	{
+		cout << ListaColectivos->getItem(i) << endl;
+		cout << "-----------------------------------------" << endl;
+		cout << ListaColectivos->getItem(i)->GetRamal() << endl;
+		cout << "-----------------------------------------" << endl;
+		cout << ListaColectivos->getItem(i)->GetRamal()->GetLista().getItem(i) << endl;
+		cout << "-----------------------------------------" << endl;
+		cout << ListaColectivos->getItem(i)->GetLista()->getItem(i) << endl;
+	}
 
 
 	//ver liberar memoria
-	delete nuevo;
-	delete viejo;
-	delete acordeon;
+	ListaColectivos->~cListaT();
 
 	return 0;
 }

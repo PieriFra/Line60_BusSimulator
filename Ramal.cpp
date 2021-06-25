@@ -1,6 +1,8 @@
 #include "Ramal.h"
 
-Ramal::Ramal(cListaT<Parada>* ListaParadas)
+cListaT<Parada> Ramal::ListaParadas = cListaT<Parada>();
+
+Ramal::Ramal(cListaT<Parada> ListaParadas)
 {
 	nombre = eRamal::RamalA;
 	codigo_parada = 0;

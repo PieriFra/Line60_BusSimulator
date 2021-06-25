@@ -3,9 +3,9 @@
 #include "Funciones.h"
 
 
-cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
+cListaT<Parada> CargarLista(cListaT<Parada> Lista)
 {
-	cListaT <Parada>* aux = Lista;
+	cListaT <Parada> aux = Lista;
 	string NomParada[12] = { "Catedral", "Juramento", "Olleros", "Carranza", "Pueyrredon", "Tribunales", "Cabildo", "Palermo", "PlazaItalia", "Congreso", "Bulnes", "Aguero" };
 	string DireParadas[12] = { "a","b","c","d","e","f", "g", "h", "i", "j", "k", "L" };
 
@@ -60,14 +60,14 @@ cListaT<Parada>* CargarLista(cListaT<Parada>* Lista)
 			}
 		}
 		Parada* parada = new Parada(i++, DireParadas[i], NomParada[i], ListaPasajeros);
-		aux->operator+(parada);
+		aux + parada;
 	}
 
 	return aux;
 }
 Ramal* GenerarRamal()
 {
-	cListaT<Parada>* ListaParadas = new cListaT<Parada>();
+	cListaT<Parada> ListaParadas;
 	ListaParadas = CargarLista(ListaParadas);
 	Ramal* ramal = new Ramal(ListaParadas);
 	
