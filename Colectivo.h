@@ -45,6 +45,7 @@ public:
 
 	string SistemaGPS(); //retorna cada cinco minutos el nombre de la parada en la que se encuentra el colectivo
 
+	void SetEstado(bool Estado) { Estado = EstadoFunicionamiento; }
 	void SetRamal(Ramal* R) { ramal = R; }
 	void SetPuerta(bool puerta) { this->puerta = puerta; }
 	Ramal* GetRamal() { return ramal;}

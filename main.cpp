@@ -87,18 +87,10 @@ int main()
 		//impirimimos por codigo de colectivo la parada en la que se encuentra
 		cout << "El colectivo " << ListaColectivos->getItem(i)->GetCodigo()
 			<< "se encuentra en la parada: " << nom;
-
-		if (ListaColectivos->getItem(i)->GetEstado() == false)
-		{
-			try{
-				ListaColectivos->getItem(i)->ColectivoRoto(ListaColectivos->getItem(i), ListaColectivos->getItem(i++));
-			}
-			catch (exception& e){
-				cout << e.what() << endl;
-			}
-		}
 	}
 
+	viejo->SetEstado(false);
+	viejo->ColectivoRoto(ListaColectivos, viejo);
 	//imprimimos monto total de cada colectivo, cantidad de pasajeros que se suben y el total de todos los colectivos
 	cout << InfoDia(ListaColectivos) << endl;
 
