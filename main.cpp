@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Definiciones.h"
 #include "Funciones.h"
-
+#define TICK 480
 int main()
 {
 	//nos creamos un colectivo de cada clase
@@ -38,56 +38,66 @@ int main()
 	}
 
 	//------------------SIMULACION------------------
-	//recorremos la lista de colectivos
-	for (unsigned int i = 0; i < ListaColectivos->getCA(); i++)
+	
+	for (int i = 0; i < TICK; i++)
 	{
-		if (Acordeon* actual = dynamic_cast<Acordeon*>(ListaColectivos->getItem(i))) //ver
-		{
-			if (actual->GetAire() == false)
-				actual->PrenderApagarAire(true);
-			
-		}
-		else if (Nuevo* actual = dynamic_cast<Nuevo*>(ListaColectivos->getItem(i)))
-		{
-			if (actual->GetAire() == false)
-				actual->PrenderApagarAire(true);
-		}
-
-		//recorremos la lista de paradas de cada colectivo
-		int incio = ListaColectivos->getItem(i)->GetRamal()->GetCod();
-		for (int i = incio; i < ListaColectivos->getItem(i)->GetRamal()->ListaParadas->getCA()-incio; i++)
-		{
-			//bajamos pasajeros por cada colectivo que haya en la lista
-			ListaColectivos->getItem(i)->BajarPasajero(ListaColectivos->getItem(i)->GetRamal());
-			//subimos pasajeros por cada colectivo que haya en la lista
-			ListaColectivos->getItem(i)->SubirPasajero(ListaColectivos->getItem(i)->GetRamal());
-		}
-		
-		//apagamos los aires
+		//recorremos la lista de colectivos
 		for (unsigned int i = 0; i < ListaColectivos->getCA(); i++)
 		{
 			if (Acordeon* actual = dynamic_cast<Acordeon*>(ListaColectivos->getItem(i))) //ver
 			{
-				if (actual->GetAire() == true)
-					actual->PrenderApagarAire(false);
+				if (actual->GetAire() == false)
+					actual->PrenderApagarAire(true);
+
 			}
 			else if (Nuevo* actual = dynamic_cast<Nuevo*>(ListaColectivos->getItem(i)))
 			{
-				if (actual->GetAire() == true)
-					actual->PrenderApagarAire(false);
+				if (actual->GetAire() == false)
+					actual->PrenderApagarAire(true);
 			}
+
+			//recorremos la lista de paradas de cada colectivo
+			int incio = ListaColectivos->getItem(i)->GetRamal()->GetCod();
+			for (int i = incio; i < ListaColectivos->getItem(i)->GetRamal()->ListaParadas->getCA() - incio; i++)
+			{
+				//bajamos pasajeros por cada colectivo que haya en la lista
+				ListaColectivos->getItem(i)->BajarPasajero(ListaColectivos->getItem(i)->GetRamal());
+				//subimos pasajeros por cada colectivo que haya en la lista
+				ListaColectivos->getItem(i)->SubirPasajero(ListaColectivos->getItem(i)->GetRamal());
+			}
+
+			//apagamos los aires
+			for (unsigned int i = 0; i < ListaColectivos->getCA(); i++)
+			{
+				if (Acordeon* actual = dynamic_cast<Acordeon*>(ListaColectivos->getItem(i))) //ver
+				{
+					if (actual->GetAire() == true)
+						actual->PrenderApagarAire(false);
+				}
+				else if (Nuevo* actual = dynamic_cast<Nuevo*>(ListaColectivos->getItem(i)))
+				{
+					if (actual->GetAire() == true)
+						actual->PrenderApagarAire(false);
+				}
+			}
+
+			//cuando el colectivo termina su recorrido, le asignamos un nuevo ramal de manera dinamica	
+			AsignarRamal(ListaColectivos->getItem(i));
+
+			if (i % 5 == 0) //cada 5 min actualizamos la poscion 
+			{
+			string nom; //variable aux
+			//llamamos al metodo gps
+			nom = ListaColectivos->getItem(i)->SistemaGPS();
+			//impirimimos por codigo de colectivo la parada en la que se encuentra
+			cout << "El colectivo " << ListaColectivos->getItem(i)->GetClave()
+				<< "se encuentra en la parada: " << nom;
+			}
+			
 		}
 
-		//cuando el colectivo termina su recorrido, le asignamos un nuevo ramal de manera dinamica	
-		AsignarRamal(ListaColectivos->getItem(i));
-
-		string nom; //variable aux
-		//llamamos al metodo gps
-		nom = ListaColectivos->getItem(i)->SistemaGPS(); 
-		//impirimimos por codigo de colectivo la parada en la que se encuentra
-		cout << "El colectivo " << ListaColectivos->getItem(i)->GetClave()
-			<< "se encuentra en la parada: " << nom;
 	}
+	
 
 	viejo->SetEstado(false);
 	viejo->ColectivoRoto(ListaColectivos, viejo);

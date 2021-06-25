@@ -145,16 +145,3 @@ string InfoDia(cListaT<Colectivo>* Lista)
 	}
 	return Datos.str();
 }
-
-//metodo que se llama una vez por minuto, actualiza el estado de todos los objetos
-void MetodoTICK() 
-{
-	int TICK = 360; //6 horas, 360 minutos
-
-
-}
-
-
-
-
-
